@@ -1,0 +1,28 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Welcome to Home
+    <a href="{% url 'Administration:index' %}">index</a>
+    <a href="{% url 'Administration:Att' %}">AttendanceReport</a>
+    <a href="{% url 'Administration:Assign' %}">Assignments</a>     
+    <a href="{% url 'Administration:Exams' %}">Exams</a>
+    <a href="{% url 'Administration:Notice' %}">Notice</a>
+    <a href="{% url 'Administration:Profile' %}">ProfileManagement</a>
+    <a href="{% url 'Administration:ChangePassword' %}">ChangePassword</a>
+    <a href="{% url 'Administration:Students' %}">Students</a>
+    <a href="{% url 'Administration:Teachers' %}">Teachers</a>
+    <a href="{% url 'Administration:Fees' %}">Fees</a>
+    
+    <img src="{% static 'images/images (3).jpg' %}">
+    <img src="{% static 'images/images (4).jpg' %}">
+    <img src="{% static 'images/School mgt Sys 1.png'%}">
+    
+</body>
+</html>
