@@ -5,7 +5,7 @@ from . import views
 app_name='teacher'
 
 urlpatterns=[
-    path('index',views.home, name='ind'),     
+    path('',views.home, name='ind'),     
     path('ProfileManagement',views.ProfileManagement,name='Profile'),
     path('AttendanceReport',views.Attendance, name='Att'),
     path('HomeWork',views.HomeWork , name='HomeWork'),
