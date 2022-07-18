@@ -6,16 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=<>, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kv7Gv5dTuTASFnFeWPpYnqRibV4vzEfylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 </head>
 <body>
     <p>Welcome to Home</p>
-    <a href="{% url 'teacher:Att' %}">AttendanceReport</a>
-    <a href="{% url 'teacher:Assign' %}">Assignments</a>
-    <a href="{% url 'teacher:HomeWork' %}">Homework</a>
-    <a href="{% url 'teacher:ProgressCard' %}">ProgressCard</a>
-    <a href="{% url 'teacher:Notice' %}">Notice</a>
-    <a href="{% url 'teacher:Profile' %}">ProfileManagement</a>
+    <a href="{% url 'Teacher:index' %}">index</a>
+    <a href="{% url 'Teacher:AttendanceReport' %}">AttendanceReport</a>
+    <a href="{% url 'Teacher:Assignment' %}">Assignment</a>
+    <a href="{% url 'Teacher:HomeWork' %}">Homework</a>
+    <a href="{% url 'Teacher:ProgressCard' %}">ProgressCard</a>
+    <a href="{% url 'Teacher:Notice' %}">Notice</a>
+    <a href="{% url 'Teacher:ProfileManagement' %}">ProfileManagement</a>
     <img src="{% static 'images/images (3).jpg' %}">
+
     
 </body>
 </html>

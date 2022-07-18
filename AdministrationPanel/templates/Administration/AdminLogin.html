@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/Adminstyles.css' %}" >
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="row" align="center">
+        <div class="column left divborder">
+            <img src="{% static 'images/admin.png' %}" />
+            <h1>Admin Login Panel</h1>
+            <p>Welcome to School Management System</p><br><br>
+
+        </div>
+        <div class="column right ">
+            <label for="" class="lbl">Username</label>
+            <input type="text" class="inputtxt" id="usertxt"><br><br>
+
+            <label for="" class="lbl">Password</label>
+            <input type="text" class="inputtxt" id="passwrd"><br><br>
+
+            <b style="color: red;" id="error"></b><br><br>
+
+            <btn>
+
+                <!-- <button class="btn btn1">Sign Up</button>
+                <button class="btn btn2" onclick="loginCheck()">Login</button> -->
+                <a class="a-btn btn1" href="{% url 'Administration:signup' %}" >SignUp</a>
+                <a class="a-btn btn2" onclick="loginCheck()">Login</a>
+            </btn>
+
+        </div>
+    </div>
+
+    <script>
+
+        function loginCheck(){
+            username = document.getElementById('usertxt').value
+            password = document.getElementById('passwrd').value
+            
+            status = 1      
+
+        if(username == ''){
+            document.getElementById('error').innerHTML = "Please Enter Username"
+            status = 0
+
+
+        }else if(username == 'admin'){
+            status = 1
+            document.getElementById('error').innerHTML = " "            
+
+
+
+        }else{
+            document.getElementById('error').innerHTML = "Username Incorrect"
+            status = 0
+        }
+
+        if(status == 1){
+
+            if (password == ''){
+            document.getElementById('error').innerHTML = "Please Enter Password"
+
+        }else if(password == 'admin'){
+            document.getElementById('error').innerHTML = " "
+
+        }else{
+            document.getElementById('error').innerHTML = "Password Incorrect"
+
+        }
+
+
+        }else{
+
+        }
+        console.log(status)
+        
+
+
+
+
+    }
+    </script>
+
+
+
+</body>
+
+</html>

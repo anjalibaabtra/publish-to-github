@@ -12,11 +12,11 @@ def ProfileManagement(request):
 def Attendance(request):
     return render(request, 'Administration/Attendance.html')
 
-def Students(request):
-    return render(request,'Administration/Students.html')
+def Student(request):
+    return render(request,'Student/StudentLogin.html')
 
-def Teachers(request):
-    return render(request,'Administration/Teachers.html')
+def Teacher(request):
+    return render(request,'Teacher/TeacherLogin.html')
 
 
 def Assignment(request):
@@ -33,6 +33,17 @@ def ChangePassword(request):
 
 def Notice(request):
     return render(request,'Administration/Notice.html')
+
+def AdminLogin(request):
+    return render(request,'Administration/AdminLogin.html')
+
+def signup(request):
+    return render(request, 'Administration/signup.html')
+    
+def Admindashboard(request):
+    return render(request, 'Administration/Admindashboard.html')
+
+
 
 
 

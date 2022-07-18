@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-^)!h*=9qe)bb!4et+kn_47gos#&xx6p=#e!vf-9e%e#$%#*5m1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['schoolmanagementbaabtra.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'Student',
     'Teacher',    
     'AdministrationPanel',
+    
 ]
 
 MIDDLEWARE = [
@@ -122,8 +123,8 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATIC_FILES_DIRS = [
-    os.path.join(BASE_DIR, "teacher/static"),
-    os.path.join(BASE_DIR,"student/static"),
+    os.path.join(BASE_DIR,"Teacher/static"),
+    os.path.join(BASE_DIR,"Student/static"),
     os.path.join(BASE_DIR,"Administration/static"),
 ]
 

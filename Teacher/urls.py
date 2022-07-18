@@ -1,15 +1,17 @@
-from unicodedata import name
-from django.urls import URLPattern, path
+from django.urls import  path
 from . import views
-
-app_name='teacher'
+app_name='Teacher'
 
 urlpatterns=[
-    path('',views.home, name='ind'),     
-    path('ProfileManagement',views.ProfileManagement,name='Profile'),
-    path('AttendanceReport',views.Attendance, name='Att'),
+    path('index',views.home, name='index'),     
+    path('ProfileManagement',views.ProfileManagement,name='ProfileManagement'),
+    path('AttendanceReport',views.Attendance, name='AttendanceReport'),
     path('HomeWork',views.HomeWork , name='HomeWork'),
     path('ProgressCard',views.ProgressCard, name='ProgressCard'),
-    path('Assignments',views.Assignment, name='Assign' ),
+    path('Assignments',views.Assignment, name='Assignment' ),
     path('Notice',views.Notice, name='Notice'),
+    path('TeacherLogin',views.TeacherLogin, name='TeacherLogin'),
+    path('signup',views.signup, name='signup'),
+
+
 ]
