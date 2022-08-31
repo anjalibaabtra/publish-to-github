@@ -5,14 +5,15 @@ from django.shortcuts import render
 def home(request):
     return render(request,'Administration/index.html')
 
-def ProfileManagement(request):
-    return render(request,'Administration/ProfileMgnt.html')    
+def AddAttendance(request):
+    return render(request,'Administration/AddAttendance.html')    
 
 
 def Attendance(request):
     return render(request, 'Administration/Attendance.html')
 
 def Student(request):
+
     return render(request,'Student/StudentLogin.html')
 
 def Teacher(request):
@@ -22,7 +23,7 @@ def Teacher(request):
 def Assignment(request):
     return render(request,'Administration/Assignment.html')
 
-def FeesReport(request):
+def Fees(request):
     return render(request,'Administration/Fees.html')
 
 def Exams(request):
@@ -40,8 +41,16 @@ def AdminLogin(request):
 def signup(request):
     return render(request, 'Administration/signup.html')
     
-def Admindashboard(request):
-    return render(request, 'Administration/Admindashboard.html')
+def dashboard(request):
+    return render(request, 'Administration/dashboard.html')
+
+def Students(request):
+    
+    return render(request,'Administration/Students.html')
+
+def Teachers(request):
+    return render(request,'Administration/Teachers.html')
+
 
 
 

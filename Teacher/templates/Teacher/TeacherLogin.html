@@ -67,6 +67,12 @@
 
                 } else if (password == 'teacher') {
                     document.getElementById('error').innerHTML = " "
+                    document.getElementById('error').innerHTML = " "
+                    document.getElementById('usertxt').value = ''
+                    document.getElementById('passwrd').value = ''
+                    // window.location.replace("TeachersDashboard");
+                    window.location.href = "../Teacher/TeacherDashboard";
+
 
                 } else {
                     document.getElementById('error').innerHTML = "Password Incorrect"

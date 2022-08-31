@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/Adminstyles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Adminstyles1.css' %}">
+    <title>Document</title>
+</head>
+
+
+<body class="dashbody">
+    <div class="navbar">
+
+
+        <h3 class="h3 line">ADMIN PANEL</h3>
+
+        <button class="line navbtn"><a class="a_inbox" href="index">Logout</a></button>
+
+    </div>
+    <div class="outer">
+        <div class="sidebar">
+            <img src="{% static 'images/admindash.jpg'%}" class="dashboardimg">
+            <a href="dashboard">Dashboard</a>
+            <a href="Teachers">Teacher</a>
+            <a href="Students">Student</a>
+            <a class="active" href="Attendance">Attendance</a>
+            <a href="Fees">Fee</a>
+            <a href="Notice">Notice</a>
+
+        </div>
+
+        <div class="table_div ">
+            <table class="tab_attend ">
+
+                <tr>
+                    <th colspan="2" style="background-color: rgb(97, 118, 249);" class="th1">Attendance</th>
+                </tr>
+                <tr class="tr2">
+                    <th class="table">Student</th>
+                    <th>Present/Absent</th>
+                </tr>
+
+                <tr id="stdlist">
+                    <!-- <td id="stdlist"></td> -->
+                </tr>
+
+            </table>
+        </div>
+    </div>
+</body>
+
+<script>
+    let student_names = ['Shivdath','Alan','Athira','Anjali','Sanjay']
+    let list = document.getElementById('stdlist')
+    student_names.forEach((item) => {
+        let names = document.createElement('names')
+        names.appendChild(document.createTextNode(item))
+        // names.innerText = item
+        list.appendChild(names)
+    })
+</script>
+
+</html>

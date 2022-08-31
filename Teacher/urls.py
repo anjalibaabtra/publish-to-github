@@ -12,6 +12,8 @@ urlpatterns=[
     path('Notice',views.Notice, name='Notice'),
     path('TeacherLogin',views.TeacherLogin, name='TeacherLogin'),
     path('signup',views.signup, name='signup'),
+    path('TeacherDashboard',views.TeacherDashboard, name='TeacherDashboard'),
+
 
 
 ]

@@ -3,6 +3,10 @@ body {
     /* background-image: url('teacher.jpg'); */
 }
 
+.dashbody {
+    background-color: white;
+}
+
 h1 {
     font-size: 50px;
 }
@@ -70,4 +74,377 @@ h1 {
     margin-top: 230px;
     
     /* border-left-color: gray; */
+}
+
+
+.navbar {
+    margin-top: 0%;
+    margin-left: 0%;
+    width: 100%;
+    height: 60px;
+    background-color: rgb(50, 50, 50);
+    color: white;
+    position: fixed;
+    
+
+}
+
+.line {
+    display: inline-block;
+}
+
+.navbtn {
+    float: right;
+    margin: 15px 40px;
+    height: 30px;
+    width: 80px;
+    color: black;
+    background-color: red;
+    border-radius: 7px;
+}
+
+.h3 {
+    padding-top: 8px;
+    padding-left: 8px;
+    letter-spacing: 2px;
+    /* font-weight: bold; */
+    font-size: x-large;
+    font-family: 'Times New Roman', Times, serif
+}
+
+.box1{    
+    padding: 10px;
+    width: 285px;
+    height: 125px;  
+    align-items: center;
+    margin-top: 0px;
+    margin-left: 20px;    
+    /* background-color: rgb(31, 31, 139); */
+    border-radius: 8px;    
+    
+    }
+
+    .color1 {
+       
+        background: linear-gradient(to top right, #33ccff 0%, #003366 100%);
+        
+        
+    }
+    .color2{
+        background: linear-gradient(to top right, #009999 0%, #339966 100%);
+    }
+
+    .color3{
+        background: linear-gradient(to top right, #ffcc66 0%, #cc9900 100%);
+    }
+
+    .color4{
+        background: linear-gradient(to top right,  #006600 0%, #009933 100%);
+    }
+
+    .a_inbox{
+        color: white;
+        text-decoration: none;
+        font-size: larger;
+    }
+
+   .box3{
+    /* margin-left: 100px; */
+    padding-top: 30px;
+    padding-left: 100px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    margin-left: 100px;    
+   }
+
+   .noticebar{
+    /* padding-top: 30px;
+    padding-left: 100px; */
+    height: 50px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    margin-left: 210px; 
+    margin-top: 120px;
+    /* border: solid 2px green; */
+    background-color:black;
+    border-radius: 3px;
+    /* color: white;
+    text-align: center; */
+    align-items: center;
+    justify-content: center;
+   }
+ 
+   .notice{
+    color: white;
+    text-align: center;
+   }
+/* The side navigation menu */
+.sidebar {
+    margin-top: 0px;
+    margin-left: 0%;
+    /* padding: 0; */
+    width: 200px;
+    background-color:rgb(65, 64, 64);
+    font-size: large;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+.outer{
+    padding-top: 60px;
+
+}
+
+.dashboardimg{
+    width: 110px;
+    height: 120px;
+    padding:43px;
+    
+
+}
+
+/* Sidebar links */
+.sidebar a {
+    display: block;
+    color: white;
+    padding: 16px;
+    text-decoration: none;
+}
+
+/* Active/current link */
+.sidebar a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .sidebar a {
+        float: left;
+    }
+
+    div.content {
+        margin-left: 0;
+    }
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+    .sidebar a {
+        text-align: center;
+        float: none;
+    }
+    
+}
+
+.header{
+    margin-left: 300px;
+}
+
+.outertable{
+    margin-left: 200px;
+    margin-top: 100px;
+    width: 900px;
+    height: 500px;
+    align-items: center;
+    /* border: solid 2px black; */
+
+}
+
+.table_div{
+    margin-left: 200px;
+    width: auto;
+    align-items: center;
+    /* border: solid 1px blue; */
+}
+
+table,th,td,tr{
+    border: solid 1px rgb(65, 64, 64);
+    border-collapse: collapse;
+    width: 20px;
+    height: 30px;
+    /* color: white; */
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+    
+  }
+
+
+.th1{
+    color: white;
+    font-size: x-large;
+}
+
+.tr2{
+    text-align: center;
+}
+
+.plus {
+    height: 24px;
+    width: 24px;
+    display: inline-block;
+    background-color:rgb(97, 118, 249);
+    color: white;
+    font-size: 24px;
+    line-height: 24px;
+    /* margin-top: 5px; */
+    margin-left: 10px;
+    text-align: center;
+    border: solid 1px black;
+    text-decoration: none;
+
+  }
+  
+  .plus::before {
+    content: "+";
+    text-decoration: none;
+
+  }
+
+  .outertable{
+    margin-left: 200px;
+    margin-top: 100px;
+    width: 900px;
+    height: 500px;
+    align-items: center;
+    /* border: solid 2px black; */
+
+}
+
+.table_div{
+    margin-left: 200px;
+    width: auto;
+    align-items: center;
+    /* border: solid 1px blue; */
+}
+
+table,th,td,tr{
+    border: solid 1px rgb(65, 64, 64);
+    border-collapse: collapse;
+    width: 20px;
+    height: 30px;
+    /* color: white; */
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+    
+  }
+
+  /* tr th:nth-child(3),tr td:nth-child(3){
+
+    display:none;
+  } */
+
+
+.th1{
+    color: white;
+    font-size: x-large;
+}
+
+.tr2{
+    text-align: center;
+    
+}
+
+.plus {
+    height: 24px;
+    width: 24px;
+    display: inline-block;
+    background-color:rgb(97, 118, 249);
+    color: white;
+    font-size: 24px;
+    line-height: 24px;
+    /* margin-top: 5px; */
+    margin-left: 10px;
+    text-align: center;
+    border: solid 1px black;
+    text-decoration: none;
+
+  }
+  
+  .plus::before {
+    content: "+";
+    text-decoration: none;
+
+  }
+  
+.fas {
+    border: solid 1px red;
+    background-color: red;
+    border-radius: 3px;
+    margin-left: 10px;
+    padding: 5px;
+    text-decoration: none;
+
+}
+
+
+.div2{
+    margin: 0;
+    padding-top:10px ;
+    height: 15%;    
+    width: 100%;
+    background-color: grey;
+    color: white;
+    text-align: center;
+    align-items: center;
+    font-size: larger;
+    
+}
+
+.outerdiv {
+    border: solid 1px grey;
+    margin-left: 210px;
+    margin-top: 10px;
+    margin-right: 5px;
+    height: 500px;
+}
+
+.div3{
+    border:solid 1px blue;
+    height:200px;
+    width: 85%;
+    margin-left:100px ;
+    margin-top: 50px;
+    margin-right:5px ;
+}
+
+.sub_btn{
+    width: 18%;
+    height: 50px;
+    font-weight: 600;
+    font-size: medium;
+    color: white; 
+    border: none;   
+    border-radius: 20px;
+    text-align: center;
+    margin-top: 25px;
+    margin-left: 100px;
+    background-color: rgb(54, 157, 54);
+    text-decoration: none;
+
 }

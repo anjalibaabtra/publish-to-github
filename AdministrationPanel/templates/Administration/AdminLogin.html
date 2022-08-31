@@ -1,11 +1,12 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/Adminstyles.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/Adminstyles.css' %}">
     <title>Document</title>
 </head>
 
@@ -30,7 +31,7 @@
 
                 <!-- <button class="btn btn1">Sign Up</button>
                 <button class="btn btn2" onclick="loginCheck()">Login</button> -->
-                <a class="a-btn btn1" href="{% url 'Administration:signup' %}" >SignUp</a>
+                <a class="a-btn btn1" href="{% url 'Administration:signup' %}" onclick="signup()">SignUp</a>
                 <a class="a-btn btn2" onclick="loginCheck()">Login</a>
             </btn>
 
@@ -39,52 +40,59 @@
 
     <script>
 
-        function loginCheck(){
+        function signup() {
+            document.getElementById('usertxt').value = ''
+            document.getElementById('passwrd').value = ''
+        }
+
+        function loginCheck() {
             username = document.getElementById('usertxt').value
             password = document.getElementById('passwrd').value
-            
-            status = 1      
 
-        if(username == ''){
-            document.getElementById('error').innerHTML = "Please Enter Username"
-            status = 0
-
-
-        }else if(username == 'admin'){
             status = 1
-            document.getElementById('error').innerHTML = " "            
+
+            if (username == '') {
+                document.getElementById('error').innerHTML = "Please Enter Username"
+                status = 0
+
+            } else if (username == 'admin') {
+                status = 1
+                document.getElementById('error').innerHTML = " "
+
+            } else {
+                document.getElementById('error').innerHTML = "Username Incorrect"
+                status = 0
+            }
 
 
 
-        }else{
-            document.getElementById('error').innerHTML = "Username Incorrect"
-            status = 0
+            if (status == 1) {
+
+                if (password == '') {
+                    document.getElementById('error').innerHTML = "Please Enter Password"
+
+                } else if (password == 'admin') {
+                    document.getElementById('error').innerHTML = " "
+                    document.getElementById('usertxt').value = ''
+                    document.getElementById('passwrd').value = ''
+                    window.location.replace("dashboard");
+
+                } else {
+                    document.getElementById('error').innerHTML = "Password Incorrect"
+
+                }
+
+
+            } else {
+
+            }
+            console.log(status)
+
+
+
+
+
         }
-
-        if(status == 1){
-
-            if (password == ''){
-            document.getElementById('error').innerHTML = "Please Enter Password"
-
-        }else if(password == 'admin'){
-            document.getElementById('error').innerHTML = " "
-
-        }else{
-            document.getElementById('error').innerHTML = "Password Incorrect"
-
-        }
-
-
-        }else{
-
-        }
-        console.log(status)
-        
-
-
-
-
-    }
     </script>
 
 

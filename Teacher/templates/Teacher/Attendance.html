@@ -1,12 +1,112 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/Teacherstyle.css' %}">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
     <title>Document</title>
 </head>
-<body>
-    Attendance for All Students
+
+<body class="dashbody">
+    <div class="navbar">
+
+
+        <h3 class="h3 line">TEACHER PANEL</h3>
+
+        <button class="line navbtn"><a class="a_inbox" href="../Administration/index">Logout</a></button>
+
+    </div>
+    <div class="outer">
+        <div class="sidebar">
+
+            <img src="{% static 'images/teacher.png'%}" class="dashboardimg">
+            <a  href="TeacherDashboard">Dashboard</a>
+            <a class="active" href="AttendanceReport">Attendance</a>
+            <a href="Notice">Notice</a>
+
+
+        </div>
+        
+        <div class="table_div">
+            <table class="outertable">
+
+                <thead>
+                    <tr>
+                        <th colspan="3" style="background-color:rgb(97, 118, 249);" class="th1"> Attendance</th>
+                    </tr>
+                    <tr class="tr2">
+                        <th class=" table">Class</th>
+                        <th>Take Attendance</th>
+                        <th>View Attendance</th>
+                    </tr>
+
+                </thead>
+                <tr>
+                    <td>One</td>
+                    <td><a class="plus" href=""></a></td>
+                    <td><a class='fa fa-eye fas' style='font-size:22px;color:white' href=""></a></td>
+                </tr>
+                <tr>
+                    <td>Two</td>
+                    <td><a class="plus" href=""></a></td>
+                    <td><a class='fa fa-eye fas' style='font-size:22px;color:white' href=""></a></td>
+                </tr>
+                <tr>
+                    <td>Three</td>
+                    <td><a class="plus" href=""></a></td>
+                    <td><a class='fa fa-eye fas' style='font-size:22px;color:white' href=""></a></td>
+                </tr>
+                <tr>
+                    <td>Four</td>
+                    <td><a class="plus" href=""></a></td>
+                    <td><a class='fa fa-eye fas' style='font-size:22px;color:white' href=""></a></td>
+                </tr>
+                <tr>
+                    <td>Five</td>
+                    <td><a class="plus" href=""></a></td>
+                    <td><a class='fa fa-eye fas' style='font-size:22px;color:white' href=""></a></td>
+                </tr>
+                <tr>
+                    <td>Six</td>
+                    <td><a class="plus" href=""></a></td>
+                    <td><a class='fa fa-eye fas' style='font-size:22px;color:white' href=""></a></td>
+                </tr>
+                <tr>
+                    <td>Seven</td>
+                    <td><a class="plus" href=""></a></td>
+                    <td><a class='fa fa-eye fas' style='font-size:22px;color:white' href=""></a></td>
+                </tr>
+                <tr>
+                    <td>Eight</td>
+                    <td><a class="plus" href=""></a></td>
+                    <td><a class='fa fa-eye fas' style='font-size:22px;color:white' href=""></a></td>
+                </tr>
+                <tr>
+                    <td>Nine</td>
+                    <td><a class="plus" href=""></a></td>
+                    <td><a class='fa fa-eye fas' style='font-size:22px;color:white' href=""></a></td>
+                </tr>
+                <tr>
+                    <td>Ten</td>
+                    <td><a class="plus" href=""></a></td>
+                    <td><a class='fa fa-eye fas' style='font-size:22px;color:white' href=""></a></td>
+                </tr>
+
+
+
+
+            </table>
+        </div>
+
+    </div>
+
+
+
+
 </body>
+
 </html>

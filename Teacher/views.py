@@ -3,7 +3,7 @@ from django.shortcuts import render
 # Create your views here.
 
 def home(request):
-    return render(request, 'Teacher/index.html')
+    return render(request, 'Administration/index.html')
 
 def ProfileManagement(request):
     return render(request, 'Teacher/ProfileManagement.html')
@@ -29,6 +29,11 @@ def TeacherLogin(request):
 
 def signup(request):
     return render(request, 'Teacher/signup.html')
+
+def TeacherDashboard(request):
+    return render(request, 'Teacher/TeacherDashboard.html')
+
+
 
 
 

@@ -1,12 +1,46 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/Adminstyles.css' %}">
     <title>Document</title>
 </head>
-<body>
-    Notice
+
+<body  class="dashbody">
+    <div class="navbar">
+
+
+        <h3 class="h3 line">ADMIN PANEL</h3>
+
+        <button class="line navbtn"><a class="a_inbox" href="index">Logout</a></button>
+
+    </div>
+    <div class="outer">
+        <div class="sidebar">
+            <img src="{% static 'images/admindash.jpg'%}" class="dashboardimg">
+            <a href="dashboard">Dashboard</a>
+            <a href="Teachers">Teacher</a>
+            <a href="Students">Student</a>
+            <a href="Attendance">Attendance</a>
+            <a href="Fees">Fee</a>
+            <a class="active" href="Notice">Notice</a>
+    
+        </div>
+
+        <div class="outerdiv">
+            <div class="div2">
+                <h3>Announce Something</h3>
+            </div>
+            <div class="div3">
+                <p>Write Your Message Here</p>
+            </div>
+            <button class="sub_btn"  ><a class="a_inbox" href="">Submit</a></button>
+        </div>
+        
 </body>
+
 </html>

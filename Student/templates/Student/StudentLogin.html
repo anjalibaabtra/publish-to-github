@@ -29,7 +29,7 @@
 
                 <!-- <button class="btn btn1" >Sign Up</button> -->
                 <!-- <button class="btn btn2" onclick="loginCheck()">Login</button> -->
-                <a class="a-btn btn1" href="{% url 'Student:signup' %}" >SignUp</a>
+                <a class="a-btn btn1" href="{% url 'Student:signup' %}">SignUp</a>
                 <a class="a-btn btn btn2" onclick="loginCheck()">Login</a>
             </btn>
 
@@ -60,6 +60,11 @@
 
                 } else if (password == 'student') {
                     document.getElementById('error').innerHTML = " "
+                    document.getElementById('usertxt').value = ''
+                    document.getElementById('passwrd').value = ''
+                    // window.location.replace("StudentDashboard");
+                    window.location.href = "../Student/StudentDashboard";
+                    
 
                 } else {
                     document.getElementById('error').innerHTML = "Password Incorrect"
@@ -70,7 +75,7 @@
             }
         }
 
-        function signup(){
+        function signup() {
             href
         }
     </script>

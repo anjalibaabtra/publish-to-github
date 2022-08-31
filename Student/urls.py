@@ -13,5 +13,5 @@ urlpatterns=[
     path('Fees',views.Fees, name='Fees'),
     path('StudentLogin',views.StudentLogin, name='StudentLogin'),
     path('signup',views.signup, name='signup'),
-
+    path('StudentDashboard',views.StudentDashboard, name='StudentDashboard'),
 ]
