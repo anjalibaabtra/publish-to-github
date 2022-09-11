@@ -1,5 +1,7 @@
 from django.shortcuts import render
 
+from student.models import StudentUser
+
 # Create your views here.
 
 def home(request):
@@ -31,11 +33,18 @@ def Notice(request):
 def StudentLogin(request):
     return render(request, 'Student/StudentLogin.html')
 
-def signup(request):
-    return render(request, 'Student/signup.html')
+# def signup(request):
+#     return render(request, 'Student/signup.html')
 
 def StudentDashboard(request):
     return render(request, 'Student/StudentDashboard.html')
 
-
+def signup(request):
+    if request.method=="POST":
+        uname=request.POST["uname"]
+        email=request.POST["email"]
+        password=request.POST["password"]
+        user_data=StudentUser(Username=uname,Email=email,Password=password)
+        user_data.save()
+    return render(request,'Student/signup.html')
 
