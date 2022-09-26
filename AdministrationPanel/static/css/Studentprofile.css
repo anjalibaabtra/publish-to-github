@@ -1,0 +1,42 @@
+.outerdiv {
+    background-color: rgb(229, 237, 240);
+    /* background-color: rgb(122, 79, 79); */
+
+    margin-top: 0%;
+    margin-left: 0%;
+    margin-right: 0%;
+    height: 650px;
+    border: none;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+
+}
+
+.div_2{
+    display: flex;
+    width: 80%;
+}
+
+.form1 {
+    width: 25%;
+    padding-left:0%;
+    padding-top: 10px;
+    margin-left: 25%;
+    margin-top: 5%;
+    color: rgb(6, 6, 6);
+    font-size: 18px;
+    align-content: center;
+    /* border: 2px solid black; */
+}
+
+.form2 {
+    width: 80%;
+    padding-left: 0%;
+    padding-top: 10px;
+    margin-left: 20%;
+    margin-top: 5%;
+    
+    color: rgb(6, 6, 6);
+    font-size: 18px;
+    /* border: 2px solid black; */
+}

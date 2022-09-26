@@ -18,7 +18,17 @@ urlpatterns = [
     path('dashboard', views.dashboard, name='dashboard'),
     path('Teachers', views.Teachers, name='Teachers'),
     path('Students', views.Students, name='Students'),
-
+    path('ViewAllStudents', views.ViewAllStudents, name='ViewAllStudents'),
+    path('ViewAllTeachers', views.ViewAllTeachers, name='ViewAllTeachers'),
+    path('AddTeachers', views.AddTeachers, name='AddTeachers'),
+    path('ApproveTeachers', views.ApproveTeachers, name='ApproveTeachers'),
+    path('Teacherssalary', views.Teacherssalary, name='Teacherssalary'),
+    path('AddStudents', views.AddStudents, name='AddStudents'),
+    path('ApproveStudents', views.ApproveStudents, name='ApproveStudents'),
+    path('FeeofStudents', views.FeeofStudents, name='FeeofStudents'),
+    path('ViewAttendance', views.ViewAttendance, name='ViewAttendance'),
+    
+    path('logout', views.Adminlogout, name='logout'),
 
 
 

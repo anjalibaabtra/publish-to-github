@@ -1,12 +1,57 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/Studentstyle.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Styles.css' %}">
+
     <title>Document</title>
 </head>
-<body>
-    Notices
+
+<body  class="dashbody">
+    <div class="navbar">
+
+
+        {% if user.is_authenticated %}
+        <h3 class="h3 line">Hello,  {{user.username}}</h3>
+        <button class="line navbtn"><a class="a_inbox" href="logout">Logout</a></button>
+        {% else %}
+        <button class="line navbtn"><a class="a_inbox" href="StudentLogin">Login</a></button>
+        {% endif %}
+        
+    </div>
+    <div class="outer">
+        <div class="sidebar">
+            <p style="color: white; margin-left: 20px;">Hello,  {{user.username}}</p>
+            <img src="{% static 'images/student.jpg'%}" class="dashboardimg">
+            <a href="StudentDashboard">Dashboard</a>
+            <a href="Profile">Profile</a>
+            <a href="AttendanceReport">View Attendance</a>            
+            <a href="ProgressCard">ProgressCard</a>
+            <a href="HomeWork">Home Work</a>
+            <a href="Fees">Fees</a>
+            <a class="active" href="Notice">Notice</a>
+            
+        </div>
+        <div class="outerdiv">
+            <div class="div2">
+                <h3>Announce Something</h3>
+            </div>
+            <div class="div3">
+                <p>Write Your Message Here</p>
+            </div>
+            <button class="sub_btn"  ><a class="a_inbox" href="">Submit</a></button>
+        </div>
+        
+    </div>
+
+
+    
+
 </body>
+
 </html>

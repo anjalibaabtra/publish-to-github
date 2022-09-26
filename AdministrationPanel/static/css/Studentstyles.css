@@ -3,9 +3,10 @@ body {
     /* background-image: url('teacher.jpg'); */
 }
 
-.dashbody {
+/* .dashbody {
     background-color: white;
-}
+    margin-right: 5px;
+} */
 
 h1 {
     font-size: 50px;
@@ -81,23 +82,25 @@ h1 {
 }
 
 
-.navbar {
+/* .navbar {
     margin-top: 0%;
     margin-left: 0%;
-    width: 100%;
+    margin-right: 20px;
+    width: 99%;
     height: 60px;
     background-color: rgb(50, 50, 50);
     color: white;
     position: fixed;
-    
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 
-}
+} */
 
-.line {
+/* .line {
     display: inline-block;
-}
+} */
 
-.navbtn {
+/* .navbtn {
     float: right;
     margin: 15px 40px;
     height: 30px;
@@ -105,7 +108,7 @@ h1 {
     color: black;
     background-color: red;
     border-radius: 7px;
-}
+} */
 
 .h3 {
     padding-top: 8px;
@@ -185,37 +188,40 @@ h1 {
     text-align: center;
    }
 /* The side navigation menu */
-.sidebar {
+/* .sidebar {
     margin-top: 0px;
     margin-left: 0%;
-    /* padding: 0; */
+    padding: 0;
+    padding-top: 5%;
     width: 200px;
     background-color:rgb(65, 64, 64);
     font-size: large;
     position: fixed;
-    height: 100%;
+    height: 79%;
     overflow: auto;
-}
-.outer{
+    border-radius: 25px;
+    border-bottom-left-radius: 20px;
+
+} */
+/* .outer{
     padding-top: 60px;
 
-}
+} */
 
-.dashboardimg{
+/* .dashboardimg{
     width: 110px;
     height: 120px;
-    padding:43px;
-    
+    padding:43px;    
 
-}
+} */
 
 /* Sidebar links */
-.sidebar a {
+/* .sidebar a {
     display: block;
     color: white;
     padding: 16px;
     text-decoration: none;
-}
+} */
 
 /* Active/current link */
 .sidebar a.active {
@@ -224,20 +230,20 @@ h1 {
 }
 
 /* Links on mouse-over */
-.sidebar a:hover:not(.active) {
+/* .sidebar a:hover:not(.active) {
     background-color: #555;
     color: white;
-}
+} */
 
 /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
-div.content {
+/* div.content {
     margin-left: 200px;
     padding: 1px 16px;
     height: 1000px;
-}
+} */
 
 /* On screens that are less than 700px wide, make the sidebar into a topbar */
-@media screen and (max-width: 700px) {
+/* @media screen and (max-width: 700px) {
     .sidebar {
         width: 100%;
         height: auto;
@@ -251,16 +257,16 @@ div.content {
     div.content {
         margin-left: 0;
     }
-}
+} */
 
 /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
-@media screen and (max-width: 400px) {
+/* @media screen and (max-width: 400px) {
     .sidebar a {
         text-align: center;
         float: none;
     }
     
-}
+} */
 
 .header{
     margin-left: 300px;
@@ -341,13 +347,6 @@ tr:nth-child(even) {
     
 }
 
-.outerdiv {
-    border: solid 1px grey;
-    margin-left: 210px;
-    margin-top: 10px;
-    margin-right: 5px;
-    height: 300px;
-}
 
 .div3{
     border:solid 1px blue;
@@ -372,4 +371,54 @@ tr:nth-child(even) {
     background-color: rgb(54, 157, 54);
     text-decoration: none;
 
+}
+
+.outerdiv{
+    border: solid 1px grey;
+    margin-left: 300px;
+    margin-top: 30px;
+    margin-right: 205px;
+    height: 500px;
+}
+
+.innerdiv{
+    padding-top: 0px;
+    height: 10%;
+    width: 98%;
+    background-color: rgb(80, 91, 80);    
+    padding: 10px;
+}
+.font{
+    color:white;
+    margin-left: 400px;
+    
+    
+}
+.text{
+    width: 35%;
+    height: 50%;
+    margin-top: 50px;
+    margin-left: 80px;
+    padding: 10px;
+    border: radius 6px;    
+    
+}
+.button{
+    margin-left: 80px;
+    width: 12%;
+    padding: 8px;
+    border-radius: 10px;
+    background-color: rgb(24, 149, 24);
+    color: white;
+    border: none;
+}
+.selection{
+    width: 38%;
+    height: 50%;
+    margin-top: 50px;
+    margin-left: 80px;
+    padding: 10px;
+    border: radius 6px;    
+    
+    
 }

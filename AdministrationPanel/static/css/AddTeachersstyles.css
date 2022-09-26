@@ -1,0 +1,68 @@
+.outerdiv{
+    border: solid 1px grey;
+    margin-left: 300px;
+    margin-top: 30px;
+    margin-right: 205px;
+    height: 400px;
+}
+
+.innerdiv{
+    padding-top: 0px;
+    height: 10%;
+    width: 98%;
+    background-color: rgb(80, 91, 80);    
+    padding: 10px;
+}
+.font{
+    color:white;
+    margin-left: 400px;
+    
+    
+}
+.text{
+    width: 35%;
+    height: 50%;
+    margin-top: 50px;
+    margin-left: 80px;
+    padding: 10px;
+    border: radius 6px;    
+    
+}
+.button{
+    margin-left: 80px;
+    width: 12%;
+    padding: 8px;
+    border-radius: 10px;
+    background-color: rgb(24, 149, 24);
+    color: white;
+    border: none;
+}
+
+.outertable {
+    margin-left: 200px;
+    margin-top: 100px;
+    width: 900px;
+    height: 80px;
+    align-items: center;
+    /* /* border: solid 2px black; */
+
+}
+
+
+.table_div {
+    margin-left: 200px;
+    width: auto;
+    align-items: center;
+    
+    /* border: solid 1px blue; */
+}
+
+.th1 {
+    color: white;
+    font-size:large;    
+}
+
+.tr2 {
+    text-align:left;
+
+}

@@ -4,7 +4,7 @@ app_name='Student'
 
 urlpatterns=[
     path('index',views.home, name='index'),     
-    path('ProfileManagement',views.ProfileManagement, name='ProfileManagement'),
+    path('Profile',views.Profile, name='Profile'),
     path('AttendanceReport',views.AttendanceReport, name='AttendanceReport'),
     path('HomeWork',views.HomeWork , name='HomeWork'),
     path('ProgressCard',views.ProgressCard, name='ProgressCard'),
@@ -14,4 +14,6 @@ urlpatterns=[
     path('StudentLogin',views.StudentLogin, name='StudentLogin'),
     path('signup',views.signup, name='signup'),
     path('StudentDashboard',views.StudentDashboard, name='StudentDashboard'),
+    path('logout', views.Studentlogout, name='logout'),
+    
 ]

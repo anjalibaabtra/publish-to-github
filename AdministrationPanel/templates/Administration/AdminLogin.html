@@ -11,32 +11,38 @@
 </head>
 
 <body>
-    <div class="row" align="center">
-        <div class="column left divborder">
-            <img src="{% static 'images/admin.png' %}" />
-            <h1>Admin Login Panel</h1>
-            <p>Welcome to School Management System</p><br><br>
+    <form action="AdminLogin" method="POST">
+        {% csrf_token %}
+        <div class="row" align="center">
+            <div class="column left divborder">
+                <img src="{% static 'images/admin.png' %}" />
+                <h1>Admin Login Panel</h1>
+                <p>Welcome to School Management System</p><br><br>
 
-        </div>
-        <div class="column right ">
-            <label for="" class="lbl">Username</label>
-            <input type="text" class="inputtxt" id="usertxt"><br><br>
+            </div>
+            <div class="column right ">
+                <label for="" class="lbl">Username</label>
+                <input type="text" name="uname" class="inputtxt" id="usertxt"><br><br>
 
-            <label for="" class="lbl">Password</label>
-            <input type="text" class="inputtxt" id="passwrd"><br><br>
+                <label for="" class="lbl">Password</label>
+                <input type="password" name="password" class="inputtxt" id="passwrd"><br><br>
 
-            <b style="color: red;" id="error"></b><br><br>
-
-            <btn>
-
-                <!-- <button class="btn btn1">Sign Up</button>
+                {% for message in messages %}
+                {{ message}}
+                {% endfor %}
+                <br>
+                <b style="color: red;" id="error"></b><br><br>
+                    <!-- <button class="btn btn1">Sign Up</button>
                 <button class="btn btn2" onclick="loginCheck()">Login</button> -->
-                <a class="a-btn btn1" href="{% url 'Administration:signup' %}" onclick="signup()">SignUp</a>
-                <a class="a-btn btn2" onclick="loginCheck()">Login</a>
-            </btn>
+                    <a class="a-btn btn1" href="{% url 'Administration:signup' %}" onclick="signup()">SignUp</a>
+                    <!-- <a type="submit" class="a-btn btn2" onclick="">Login</a> -->
+                    
+                    <button type="submit" class="a-btn btn2" onclick="">Login</button>
+                </btn>
 
+            </div>
         </div>
-    </div>
+    </form>
 
     <script>
 
@@ -75,7 +81,7 @@
                     document.getElementById('error').innerHTML = " "
                     document.getElementById('usertxt').value = ''
                     document.getElementById('passwrd').value = ''
-                    window.location.replace("dashboard");
+                    // window.location.replace("dashboard");
 
                 } else {
                     document.getElementById('error').innerHTML = "Password Incorrect"

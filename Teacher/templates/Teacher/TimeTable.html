@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/Teacherstyle.css' %}">
+    <title>Document</title>
+</head>
+
+<body class="dashbody">
+    <div class="navbar">
+
+
+        {% if user.is_authenticated %}
+        <h3 class="h3 line">Hello,  {{user.username}}</h3>
+        <button class="line navbtn"><a class="a_inbox" href="logout">Logout</a></button>
+        {% else %}
+        <button class="line navbtn"><a class="a_inbox" href="TeacherLogin">Login</a></button>
+        {% endif %}
+
+    </div>
+    <div class="outer">
+        <div class="sidebar">
+            <!-- <p style="color: white; margin-left: 20px;">Hello, {{user.username}}</p> -->
+            <img src="{% static 'images/teacher.png'%}" class="dashboardimg">
+            <a href="TeacherDashboard">Dashboard</a>
+            <a href="Profile">Profile</a>
+            <a href="AttendanceReport">Attendance</a>            
+            <a href="StudentsRegister">StudentsRegister</a>
+            <a href="StudentsMarks">StudentsMarks</a>
+            <a class="active" href="TimeTable">TimeTable</a>
+            <a href="Notice">Notice</a>
+
+        </div>
+    </div>
+    <div class="outerdiv">TimeTable
+      
+    </div>
+
+    </div>
+
+
+
+
+</body>
+
+</html>

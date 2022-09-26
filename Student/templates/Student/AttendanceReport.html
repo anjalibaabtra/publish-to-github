@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/Studentstyle.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Styles.css' %}">
+
     <title>Document</title>
 </head>
 
@@ -14,16 +16,25 @@
     <div class="navbar">
 
 
-        <h3 class="h3 line">STUDENT PANEL</h3>
-
-        <button class="line navbtn"><a class="a_inbox" href="../Administration/index">Logout</a></button>
+        {% if user.is_authenticated %}
+        <h3 class="h3 line">Hello,  {{user.username}}</h3>
+        <button class="line navbtn"><a class="a_inbox" href="logout">Logout</a></button>
+        {% else %}
+        <button class="line navbtn"><a class="a_inbox" href="StudentLogin">Login</a></button>
+        {% endif %}
                 
     </div>
     <div class="outer">
         <div class="sidebar">
+            <p style="color: white; margin-left: 20px;"></p>
             <img src="{% static 'images/student.jpg'%}" class="dashboardimg">
             <a  href="StudentDashboard">Dashboard</a>
+            <a  href="Profile">Profile</a>
             <a class="active" href="AttendanceReport">View Attendance</a>
+            <a href="ProgressCard">ProgressCard</a>
+            <a href="HomeWork">Home Work</a>
+            <a href="Fees">Fees</a>
+            <a href="Notice">Notice</a>
             
         </div>
         

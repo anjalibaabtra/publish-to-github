@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/Studentstyle.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Studentprofile.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Styles.css' %}">
+
+    <title>Document</title>
+</head>
+
+<body class="dashbody">
+    <div class="navbar">
+
+        {% if user.is_authenticated %}
+        <h3 class="h3 line">Hello,  {{user.username}}</h3>
+        <button class="line navbtn"><a class="a_inbox" href="logout">Logout</a></button>
+        {% else %}
+        <button class="line navbtn"><a class="a_inbox" href="StudentLogin">Login</a></button>
+        {% endif %}
+        
+    </div>
+    <div class="outer">
+        <div class="sidebar">
+            <p style="color: white; margin-left: 20px;"></p>
+            <!-- <img src="{% static 'images/student.jpg'%}" class="dashboardimg"> -->
+            <a href="StudentDashboard">Dashboard</a>
+            <a class="active" href="Profile">Profile</a>
+            <a href="AttendanceReport">View Attendance</a>
+            <a href="ProgressCard">ProgressCard</a>
+            <a href="HomeWork">Home Work</a>
+            <a href="Fees">Fees</a>
+            <a href="Notice">Notice</a>
+
+        </div>
+
+        <div class="outerdiv">
+            <!-- <div>
+                <img src="{% static 'images/student.jpg'%}" class="dashboardimg"><br>
+                <label for="">Name : </label>
+                <label for="">{{user.username}}</label><br>
+                <label for="">Student Id:</label>
+                <label for=""><label><br>
+                <label for="">Class:</label>
+                <label for=""></label><br>
+                <label for="">Division:</label>
+                <label for=""></label><br>
+
+            </div> -->
+            <div class="div_2">
+                
+                <div class="form1">
+                    <img src="{% static 'images/student.jpg'%}" class="dashboardimg"><br>
+                    <label for="">Name : </label>
+                    <label for="">{{user.username}}</label><br><br>
+                    <label for="">Student Id:</label>
+                    <label for="">323942<label><br><br>
+                    <label for="">Class:</label>
+                    <label for="">4</label><br><br>
+                    <label for="">Division:</label>
+                    <label for="">h</label>
+                </div>
+                
+                <div class="form2">
+                    <label for="">Roll No:</label>
+                    <label for=""></label><br><br>
+                    <label for="">Academic Year:</label>
+                    <label for=""></label><br><br>
+                    <label for="">Gender:</label>
+                    <label for=""></label><br><br>
+                    <label for="">Religion:</label>
+                    <label for=""></label><br><br>
+                    <label for="">Blood:</label>
+                    <label for=""></label>
+                </div>
+                
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+</body>
+
+</html>

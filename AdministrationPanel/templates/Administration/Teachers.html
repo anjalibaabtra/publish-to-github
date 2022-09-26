@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/Adminstyles.css' %}">
     <link rel="stylesheet" href="{% static 'css/Adminstyles1.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Styles.css' %}">
+
     <title>Document</title>
 </head>
 
@@ -17,14 +19,24 @@
 
         <h3 class="h3 line">ADMIN PANEL</h3>
 
-        <button class="line navbtn"><a class="a_inbox" href="index">Logout</a></button>
+        <button class="line navbtn"><a class="a_inbox" href="logout">Logout</a></button>
 
     </div>
     <div class="outer">
         <div class="sidebar">
+            <p style="color: white; margin-left: 20px;">Hello,  {{user.username}}</p>
             <img src="{% static 'images/admindash.jpg'%}" class="dashboardimg">
             <a href="dashboard">Dashboard</a>
-            <a class="active" href="Teachers">Teacher</a>
+            <!-- <a class="active fa fa-caret-down" href="Teachers">Teacher</a> -->
+            <button  class="active">Teacher
+                     <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-container">
+                <a href="#">View All Teachers</a>
+                <a href="#">Add Teachers</a>
+                <a href="#">Approve Teachers</a>
+                <a href="#">Teachers Salary</a>
+              </div>
             <a href="Students">Student</a>
             <a href="Attendance">Attendance</a>
             <a href="Fees">Fee</a>
@@ -33,16 +45,16 @@
         </div>
         <div class="box3">
             <div class="box1 color1">
-                <a class="a_inbox" href="">View all Teachers</a>
+                <a class="a_inbox" href="ViewAllTeachers">View all Teachers</a>
             </div>
             <div class="box1 color2">
-                <a class="a_inbox" href="">Add Teachers</a>
+                <a class="a_inbox" href="AddTeachers">Add Teachers</a>
             </div>
             <div class="box1 color3">
-                <a class="a_inbox" href="">Approve Teachers </a>
+                <a class="a_inbox" href="ApproveTeachers">Approve Teachers </a>
             </div>
             <div class="box1 color4">
-                <a class="a_inbox" href="">view Teachers Salary </a>
+                <a class="a_inbox" href="Teacherssalary">view Teachers Salary </a>
             </div>
         </div>
         <!-- <div class="box3">

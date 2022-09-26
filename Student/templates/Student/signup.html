@@ -78,6 +78,12 @@
 
                   <b style="color: red;" id="error"></b><br><br>
 
+                  <div>
+                    {% for message in messages %}
+                    {{message}}
+                    {% endfor %}
+                  </div>
+
                   <div class="form-check d-flex justify-content-center mb-5">
                     <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
                     <label class="form-check-label" for="form2Example3g">
@@ -90,7 +96,7 @@
                       onclick="validateform()">SignUp</button>
                   </div>
 
-                  <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="StudentLogin"
+                  <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="#!"
                       class="fw-bold text-body"><u>Login here</u></a></p>
 
                 </form>
@@ -124,7 +130,7 @@
         document.getElementById('error').innerHTML = "Please Enter the Correct Password"
       } else if (password.length >= 6) {
         document.getElementById('error').innerHTML = " "
-        window.location.replace("StudentLogin")
+        // window.location.replace("StudentLogin")
       }
     }
 

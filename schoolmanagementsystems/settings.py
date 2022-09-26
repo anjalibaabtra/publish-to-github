@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-^)!h*=9qe)bb!4et+kn_47gos#&xx6p=#e!vf-9e%e#$%#*5m1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['schoolmanagementbaabtra.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['schoolmanagementbaabtra.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -38,9 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'student',
-    'teacher',    
+    'teacher',
     'administrationpanel',
-    
+
 ]
 
 MIDDLEWARE = [
@@ -85,9 +85,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'school_project',
         'USER': 'postgres',
-        'PASSWORD':'12345',
+        'PASSWORD': '12345',
         'HOST': '127.0.0.1',
-        'PORT':'5432',
+        'PORT': '5432',
 
     }
 }
@@ -130,14 +130,13 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATIC_FILES_DIRS = [
-    os.path.join(BASE_DIR,"Teacher/static"),
-    os.path.join(BASE_DIR,"Student/static"),
-    os.path.join(BASE_DIR,"Administration/static"),
+    os.path.join(BASE_DIR, "Teacher/static"),
+    os.path.join(BASE_DIR, "Student/static"),
+    os.path.join(BASE_DIR, "Administration/static"),
 ]
 
 # MEDIA_URL='/media/'
 # MEDIA_ROOT=os.path.join(BASE_DIR,'media')
-
 
 
 # Default primary key field type
@@ -145,3 +144,7 @@ STATIC_FILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+AUTH_USER_MODEL = 'administrationpanel.AdminUser'
+
+                  

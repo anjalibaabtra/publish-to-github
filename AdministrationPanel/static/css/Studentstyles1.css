@@ -1,0 +1,40 @@
+.seltn {
+    align-items: center;
+    /* margin: 5%; */
+    width: 25%;
+    /* position: sticky; */
+    
+}
+
+.buttons {
+    margin-left: 80px;
+    width: 30%;
+    padding: 8px;
+    border-radius: 10px;
+    background-color: rgb(24, 149, 24);
+    color: white;
+    border: none;
+}
+
+.tblr {
+    /* height: 5px; */
+    width: 40px;
+    background-color: #009999;
+    /* line-height: 5px; */
+}
+
+.outertable{
+    margin-left: 200px;
+    margin-top: 100px;
+    width: 900px;
+    height: 500px;
+    align-items: center;
+    /* border: solid 2px black; */
+
+}
+.table_div{
+    margin-left: 200px;
+    width: auto;
+    align-items: center;
+    /* border: solid 1px blue; */
+}

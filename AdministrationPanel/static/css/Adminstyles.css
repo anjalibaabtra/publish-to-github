@@ -4,9 +4,9 @@ body {
     /* background-image: url('teacher.jpg'); */
 }
 
-.dashbody {
+/* .dashbody {
     background-color: white;
-}
+} */
 
 h1 {
     font-size: 50px;
@@ -81,7 +81,7 @@ h1 {
     /* border-left-color: gray; */
 }
 
-.navbar {
+/* .navbar {
     margin-top: 0%;
     margin-left: 0%;
     width: 100%;
@@ -91,14 +91,14 @@ h1 {
     position: fixed;
 
 
-}
+} */
 
-.line {
+/* .line {
     display: inline-block;
 
-}
+} */
 
-.navbtn {
+/* .navbtn {
     float: right;
     margin: 15px 40px;
     height: 30px;
@@ -107,7 +107,7 @@ h1 {
     background-color: red;
     border-radius: 7px;
 
-}
+} */
 
 .h3 {
     padding-top: 8px;
@@ -149,11 +149,11 @@ h1 {
     background: linear-gradient(to top right, #006600 0%, #009933 100%);
 }
 
-.a_inbox {
+/* .a_inbox {
     color: white;
     text-decoration: none;
     font-size: larger;
-}
+} */
 
 .box3 {
     margin-left: 100px;
@@ -168,60 +168,60 @@ h1 {
 
 
 /* The side navigation menu */
-.sidebar {
+/* .sidebar {
     margin-top: 0px;
     margin-left: 0%;
-    /* padding: 0; */
+    padding: 0;
     width: 200px;
     background-color: rgb(65, 64, 64);
     font-size: large;
     position: fixed;
     height: 100%;
     overflow: auto;
-}
+} */
 
-.outer {
+/* .outer {
     padding-top: 60px;
 
-}
+} */
 
-.dashboardimg {
+/* .dashboardimg {
     width: 110px;
     height: 120px;
     padding: 43px;
 
 
-}
+} */
 
 /* Sidebar links */
-.sidebar a {
+/* .sidebar a {
     display: block;
     color: white;
     padding: 16px;
     text-decoration: none;
-}
+} */
 
 /* Active/current link */
-.sidebar a.active {
+/* .sidebar a.active {
     background-color: #04AA6D;
     color: white;
-}
+} */
 
 /* Links on mouse-over */
-.sidebar a:hover:not(.active) {
+/* .sidebar a:hover:not(.active) {
     background-color: #555;
     color: white;
-}
+} */
 
 /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
-div.content {
+/* div.content {
     margin-left: 200px;
     padding: 1px 16px;
     height: 1000px;
-}
+} */
 
 /* On screens that are less than 700px wide, make the sidebar into a topbar */
-@media screen and (max-width: 700px) {
+/* @media screen and (max-width: 700px) {
     .sidebar {
         width: 100%;
         height: auto;
@@ -235,16 +235,16 @@ div.content {
     div.content {
         margin-left: 0;
     }
-}
+} */
 
 /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
-@media screen and (max-width: 400px) {
+/* @media screen and (max-width: 400px) {
     .sidebar a {
         text-align: center;
         float: none;
     }
 
-}
+} */
 
 .header {
     margin-left: 300px;
@@ -256,10 +256,9 @@ div.content {
     width: 900px;
     height: 500px;
     align-items: center;
-    /* border: solid 2px black; */
+    /* /* border: solid 2px black; */
 
 }
-
 
 
 .table_div {

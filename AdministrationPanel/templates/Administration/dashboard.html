@@ -8,66 +8,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/Adminstyles.css' %}">
     <link rel="stylesheet" href="{% static 'css/Adminstyles1.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Styles.css' %}">
+
 
     <title>Document</title>
 </head>
 
-<body  class="dashbody">
-    <div class="navbar">
+<body class="dashbody">
+    <!-- <form action="" method="post">
+        {% csrf_token %} -->
+        <div class="navbar">
+            <h3 class="h3 line">ADMIN PANEL</h3>
 
+            <button class="line navbtn"><a class="a_inbox" href="logout">Logout</a></button>
 
-        <h3 class="h3 line">ADMIN PANEL</h3>
-
-        <button class="line navbtn"><a class="a_inbox" href="index">Logout</a></button>
-
-    </div>
-    <div class="outer">
-        <div class="sidebar">
-            <img src="{% static 'images/admindash.jpg'%}" class="dashboardimg">
-            <a class="active" href="dashboard">Dashboard</a>
-            <a href="Teachers">Teacher</a>
-            <a href="Students">Student</a>
-            <a href="Attendance">Attendance</a>
-            <a href="Fees">Fee</a>
-            <a href="Notice">Notice</a>
-    
         </div>
-        <div class="box3">
-            <div class="box1 color1">
-                <a class="a_inbox" href="">Total Teachers</a>
-            </div>
-            <div class="box1 color2">
-                <a class="a_inbox" href="">Total Students</a>
-            </div>
-            <div class="box1 color3">
-                <a class="a_inbox" href="">Teachers Salary</a>
-            </div>
-            <div class="box1 color4">
-                <a class="a_inbox" href="">Student Fee</a>
-            </div>
-        </div>
-        <div class="box3">
-            <div class="box1 color1">
-                <a class="a_inbox" href="">Pending Teachers</a>
-            </div>
-                
-            <div class="box1 color2">
-                <a class="a_inbox" href="">Pending Admission</a>
-            </div>
+        <div class="outer">
+            <div class="sidebar">
+                <p style="color: white; margin-left: 20px;">Hello,  {{user.username}}</p>
+                <img src="{% static 'images/admindash.jpg'%}" class="dashboardimg">
+                <a class="active" href="dashboard">Dashboard</a>
+                <a href="Teachers">Teacher</a>
+                <a href="Students">Student</a>
+                <a href="Attendance">Attendance</a>
+                <a href="Fees">Fee</a>
+                <a href="Notice">Notice</a>
 
-            <div class="box1 color3">
-                <a class="a_inbox" href="">Pending Salary</a>
             </div>
-            <div class="box1 color4">
-                <a class="a_inbox" href="">Pending Dues</a>
+            <div class="box3">
+                <div class="box1 color1">
+                    <a class="a_inbox" href="ViewAllTeachers">Total Teachers</a>
+                </div>
+                <div class="box1 color2">
+                    <a class="a_inbox" href="ViewAllStudents">Total Students</a>
+                </div>
+                <div class="box1 color3">
+                    <a class="a_inbox" href="Teacherssalary">Teachers Salary</a>
+                </div>
+                <div class="box1 color4">
+                    <a class="a_inbox" href="FeeofStudents">Student Fee</a>
+                </div>
             </div>
-        </div>
-        <div class="noticebar">
-            <h3 id="" class="notice">Notice Board</h3>           
-            
-        </div>
-    </div>
+            <div class="box3">
+                <div class="box1 color1">
+                    <a class="a_inbox" href="">Pending Teachers</a>
+                </div>
 
+                <div class="box1 color2">
+                    <a class="a_inbox" href="">Pending Admission</a>
+                </div>
+
+                <div class="box1 color3">
+                    <a class="a_inbox" href="">Pending Salary</a>
+                </div>
+                <div class="box1 color4">
+                    <a class="a_inbox" href="">Pending Dues</a>
+                </div>
+            </div>
+            <div class="noticebar">
+                <h3 id="" class="notice">Notice Board</h3>
+
+            </div>
+        </div>
+    <!-- </form> -->
 
     <!-- <div class="box4"></div>
     <div class="box5"></div>

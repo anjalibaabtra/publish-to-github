@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/Adminstyles.css' %}">
     <link rel="stylesheet" href="{% static 'css/Adminstyles1.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Styles.css' %}">
+
     <title>Document</title>
 </head>
 
@@ -15,13 +17,14 @@
     <div class="navbar">
 
 
-        <h3 class="h3 line">ADMIN PANEL</h3>
+        <h3 class="h3 line">Hello,  {{user.username}}</h3>
 
-        <button class="line navbtn"><a class="a_inbox" href="index">Logout</a></button>
+        <button class="line navbtn"><a class="a_inbox" href="logout">Logout</a></button>
 
     </div>
     <div class="outer">
         <div class="sidebar">
+            <p style="color: white; margin-left: 20px;"></p>
             <img src="{% static 'images/admindash.jpg'%}" class="dashboardimg">
             <a href="dashboard">Dashboard</a>
             <a href="Teachers">Teacher</a>
@@ -33,16 +36,16 @@
         </div>
         <div class="box3">
             <div class="box1 color1">
-                <a class="a_inbox" href="">View All Students</a>
+                <a class="a_inbox" href="ViewAllStudents">View All Students</a>
             </div>
             <div class="box1 color2">
-                <a class="a_inbox" href="">Add Students</a>
+                <a class="a_inbox" href="AddStudents">Add Students</a>
             </div>
             <div class="box1 color3">
-                <a class="a_inbox" href="">Approve Students</a>
+                <a class="a_inbox" href="ApproveStudents">Approve Students</a>
             </div>
             <div class="box1 color4">
-                <a class="a_inbox" href="">View Student Fee</a>
+                <a class="a_inbox" href="FeeofStudents">View Student Fee</a>
             </div>
         </div>
         <!-- <div class="box3">

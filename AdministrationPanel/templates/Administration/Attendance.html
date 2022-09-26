@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/Adminstyles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Styles.css' %}">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
     <title>Document</title>
 </head>
@@ -17,12 +18,14 @@
 
         <h3 class="h3 line">ADMIN PANEL</h3>
 
-        <button class="line navbtn"><a class="a_inbox" href="index">Logout</a></button>
+        <button class="line navbtn"><a class="a_inbox" href="logout">Logout</a></button>
 
     </div>
     <div class="outer">
         <div class="sidebar">
+            <p style="color: white; margin-left: 20px;">Hello,  {{user.username}}</p>
             <img src="{% static 'images/admindash.jpg'%}" class="dashboardimg">
+            
             <a href="dashboard">Dashboard</a>
             <a href="Teachers">Teacher</a>
             <a href="Students">Student</a>
@@ -50,7 +53,7 @@
                 <tr>
                     <td>One</td>
                     <td><a class="plus" href="AddAttendance"></a></td>
-                    <td><a class='fa fa-eye fas' style='font-size:22px;color:white' href=""></a></td>
+                    <td><a class='fa fa-eye fas' style='font-size:22px;color:white' href="ViewAttendance"></a></td>
                 </tr>
                 <tr>
                     <td>Two</td>

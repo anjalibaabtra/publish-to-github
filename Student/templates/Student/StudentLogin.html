@@ -7,35 +7,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{% static 'css/Studentstyle.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Studentstyles.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'css/Styles.css' %}"> -->
+
+    
 </head>
 
 <body>
-    <div class="row" align="center">
-        <div class="column left divborder">
-            <img src="{% static 'images/student.png' %}" />
-            <h1>Student Login Panel</h1>
-            <p>Welcome to School Management System</p><br><br>
+    <form action="StudentLogin" method="POST">
+        {% csrf_token %}
+        <div class="row" align="center">
+            <div class="column left divborder">
+                <img src="{% static 'images/student.png' %}" />
+                <h1>Student Login Panel</h1>
+                <p>Welcome to School Management System</p><br><br>
+
+            </div>
+            <div class="column right ">
+                <label for="" class="lbl">Username</label>
+                <input type="text" name="uname" class="inputtxt" id="usertxt"><br><br>
+                <label for="" class="lbl">Password</label>
+                <input type="password" name="password" class="inputtxt" id="passwrd"><br><br>
+                {% for message in messages %}
+                {{ message}}
+                {% endfor %}
+                <br>
+                <b style="color: red;" id="error"></b><br><br>
+
+                <btn>
+
+                    <!-- <button class="btn btn1" >Sign Up</button> -->
+                    <!-- <button class="btn btn2" onclick="loginCheck()">Login</button> -->
+                    <a class="a-btn btn1" href="{% url 'Student:signup' %}">SignUp</a>
+                    <button type="submit" class="a-btn btn2" onclick="">Login</button>
+                </btn>
+
+            </div>
 
         </div>
-        <div class="column right ">
-            <label for="" class="lbl">Username</label>
-            <input type="text" class="inputtxt" id="usertxt"><br><br>
-            <label for="" class="lbl">Password</label>
-            <input type="text" class="inputtxt" id="passwrd"><br><br>
-            <b style="color: red;" id="error"></b><br><br>
-
-            <btn>
-
-                <!-- <button class="btn btn1" >Sign Up</button> -->
-                <!-- <button class="btn btn2" onclick="loginCheck()">Login</button> -->
-                <a class="a-btn btn1" href="{% url 'Student:signup' %}">SignUp</a>
-                <a class="a-btn btn btn2" onclick="loginCheck()">Login</a>
-            </btn>
-
-        </div>
-
-    </div>
+    </form>
 
     <script>
         function loginCheck() {
@@ -64,7 +74,7 @@
                     document.getElementById('passwrd').value = ''
                     // window.location.replace("StudentDashboard");
                     window.location.href = "../Student/StudentDashboard";
-                    
+
 
                 } else {
                     document.getElementById('error').innerHTML = "Password Incorrect"

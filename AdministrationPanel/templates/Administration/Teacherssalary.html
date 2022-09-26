@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/Adminstyles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/AddTeachersstyles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Styles.css' %}">
+
+    <title>Document</title>
+</head>
+
+<body  class="dashbody">
+    <div class="navbar">
+
+
+        <h3 class="h3 line">ADMIN PANEL</h3>
+
+        <button class="line navbtn"><a class="a_inbox" href="logout">Logout</a></button>
+
+    </div>
+    <div class="outer">
+        <div class="sidebar">
+            <p style="color: white; margin-left: 20px;">Hello,  {{user.username}}</p>
+            <img src="{% static 'images/admindash.jpg'%}" class="dashboardimg">
+            <a href="dashboard">Dashboard</a>
+            <a class="active" href="Teachers">Teacher</a>
+            <a href="Students">Student</a>
+            <a href="Attendance">Attendance</a>
+            <a href="Fees">Fee</a>
+            <a  href="Notice">Notice</a>
+    
+        </div>
+        <div class="table_div">
+            <table class="outertable">
+
+                <thead>
+                    <tr>
+                        <th colspan="2" style="background-color:rgb(97, 118, 249);" class="th1"> Teachers Salary</th>
+                    </tr>
+                    <tr class="tr2">
+                        <th class=" table">Teachers Name</th>
+                        <th class="table">Salary</th>                      
+                        
+                    </tr>
+
+                </thead>             
+
+
+
+
+
+            </table>
+        </div>
+
+
+        
+        
+</body>
+
+</html>

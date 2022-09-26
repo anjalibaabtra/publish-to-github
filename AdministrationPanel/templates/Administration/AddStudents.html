@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="{% static 'css/Adminstyles.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'css/Studentstyles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Styles.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'css/AddTeachersstyles.css' %}"> -->
+    
+    <title>Document</title>
+</head>
+
+<body  class="dashbody">
+    <div class="navbar">
+
+
+        <h3 class="h3 line">ADMIN PANEL</h3>
+
+        <button class="line navbtn"><a class="a_inbox" href="logout">Logout</a></button>
+
+    </div>
+    <div class="outer">
+        <div class="sidebar">
+            <p style="color: white; margin-left: 20px;">Hello,  {{user.username}}</p>
+            <img src="{% static 'images/admindash.jpg'%}" class="dashboardimg">
+            <a href="dashboard">Dashboard</a>
+            <a href="Teachers">Teacher</a>
+            <a class="active" href="Students">Student</a>
+            <a href="Attendance">Attendance</a>
+            <a href="Fees">Fee</a>
+            <a href="Notice">Notice</a>
+    
+        </div>
+
+    <div class="outerdiv">
+        <div class="innerdiv">
+            <h3 class="font">New Admission of Student In School</h3>
+        </div>
+        <div>
+            <input type="text" placeholder="First Name" class="text">
+            <input type="text" placeholder="Last Name" class="text">
+            <input type="text" placeholder="Username" class="text">
+            <input type="text" placeholder="Password" class="text">
+            <input type="text" placeholder="Contact" class="text">
+            <input type="text" placeholder="Fee" class="text"><br>            
+            <select name="" id="" class="selection">
+                <option value=" " selected disabled hidden>Select a class</option>
+                <option value="">1st std</option>
+                <option value="">2nd std</option>
+                <option value="">3rd std</option>
+                <option value="">4th std</option>
+                <option value="">5th std</option>
+                <option value="">6th std</option>
+                <option value="">7th std</option>
+                <option value="">8th std</option>
+                <option value="">9th std</option>
+                <option value="">10th std</option>
+
+            </select>
+            <input type="text" placeh
+            older="Roll Number" class="text"><br><br>
+
+            <button class="button">Submit</button>
+
+        </div>
+    </div>
+
+    
+
+        
+</body>
+
+</html>

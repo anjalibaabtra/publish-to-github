@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/Adminstyles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/AddTeachersstyles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Styles.css' %}">
+
+    
+    <title>Document</title>
+</head>
+
+<body  class="dashbody">
+    <div class="navbar">
+
+
+        <h3 class="h3 line">ADMIN PANEL</h3>
+
+        <button class="line navbtn"><a class="a_inbox" href="logout">Logout</a></button>
+
+    </div>
+    <div class="outer">
+        <div class="sidebar">
+            <p style="color: white; margin-left: 20px;">Hello,  {{user.username}}</p>
+            <img src="{% static 'images/admindash.jpg'%}" class="dashboardimg">
+            <a href="dashboard">Dashboard</a>
+            <a  class="active"href="Teachers">Teacher</a>
+            <a href="Students">Student</a>
+            <a href="Attendance">Attendance</a>
+            <a href="Fees">Fee</a>
+            <a href="Notice">Notice</a>
+    
+        </div>
+
+    <div class="outerdiv">
+        <div class="innerdiv">
+            <h3 class="font">Hire New Teacher To School</h3>
+        </div>
+        <div>
+            <input type="text" placeholder="First Name" class="text">
+            <input type="text" placeholder="Last Name" class="text">
+            <input type="text" placeholder="Username" class="text">
+            <input type="text" placeholder="Password" class="text">
+            <input type="text" placeholder="Contact" class="text">
+            <input type="text" placeholder="Salary" class="text"><br><br>
+
+            <button class="button">Hire</button>
+
+        </div>
+    </div>
+
+    
+
+        
+</body>
+
+</html>

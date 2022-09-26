@@ -11,34 +11,41 @@
 </head>
 
 <body>
-    <div class="row" align="center">
-        <div class="column left divborder">
-            <img src="{% static 'images/teacher.png' %}" width="200px" height="200px" />
-            <h1>Teacher Login Panel</h1>
-            <p>Welcome to School Management System</p><br><br>
+    <form action="TeacherLogin" method="POST">
+        {% csrf_token %}
+        <div class="row" align="center">
+            <div class="column left divborder">
+                <img src="{% static 'images/teacher.png' %}" width="200px" height="200px" />
+                <h1>Teacher Login Panel</h1>
+                <p>Welcome to School Management System</p><br><br>
 
-        </div>
-        <div class="column right ">
-            <label for="" class="lbl">Username</label>
-            <input type="text" class="inputtxt" id="usertxt"><br><br>
-            <label for="" class="lbl">Password</label>
-            <input type="text" class="inputtxt" id="passwrd"><br><br>
+            </div>
+            <div class="column right ">
+                <label for="" class="lbl">Username</label>
+                <input type="text" name="uname" class="inputtxt" id="usertxt"><br><br>
+                <label for="" class="lbl">Password</label>
+                <input type="password" name="password" class="inputtxt" id="passwrd"><br><br>
+                {% for message in messages %}
+                {{ message}}
+                {% endfor %}
+                <br>
+                <b style="color: red;" id="error"></b><br><br>
 
-            <b style="color: red;" id="error"></b><br><br>
 
-            
-            <btn>
+                <btn>
 
-                <!-- <button class="btn btn1">Sign Up</button>
+                    <!-- <button class="btn btn1">Sign Up</button>
                 <button class="btn btn2" onclick="loginCheck()">Login</button> -->
-                <a class="a-btn btn1" href="{% url 'Teacher:signup' %}">SignUp</a>
-                <a class="a-btn btn2" onclick="loginCheck()">Login</a>
+                    <a class="a-btn btn1" href="{% url 'Teacher:signup' %}">SignUp</a>
+                    <button type="submit" class="a-btn btn2" onclick="">Login</button>
 
-            </btn>
+                </btn>
+
+            </div>
 
         </div>
+    </form>
 
-    </div>
 
     <script>
         function loginCheck() {
