@@ -20,22 +20,27 @@
         <h3 class="h3 line">Hello, {{user.username}}</h3>
         <button class="line navbtn"><a class="a_inbox" href="logout">Logout</a></button>
         {% else %}
-        <button class="line navbtn"><a class="a_inbox" href="AdminLogin">Login</a></button>
+        <button class="line navbtn"><a class="a_inbox" href="TeacherLogin">Login</a></button>
         {% endif %}
 
     </div>
     <div class="outer">
         <div class="sidebar">
             <p style="color: white; margin-left: 20px;"></p>
-            <img src="{% static 'images/admindash.jpg'%}" class="dashboardimg">
-            <a href="dashboard">Dashboard</a>
-            <a href="Teachers.html">Teacher</a>
-            <a href="Students">Student</a>
-            <a class="active" href="ViewAttendance">Attendance</a>    
-            <a href="Fees">Fee</a>
+            <img src="{% static 'images/Teacher.png'%}" class="dashboardimg">
+            <a href="TeacherDashboard">Dashboard</a>
+            <a href="Profile">Profile</a>
+            <a href="Attendance">Attendance</a>
+            <a href="ProgressCard">ProgressCard</a>
+            <a href="HomeWork">HomeWork</a>
+            <a href="TimeTable">TimeTable</a>
+            <a href="Fees">Fees</a>
             <a href="Notice">Notice</a>
 
         </div>
+
+
+
 
         <div class="outerdiv" style="padding-bottom: 20px;">
             <div class="innerdiv">
@@ -52,16 +57,11 @@
             
         </div>
 
-
-
-
-
-
         
     </div>
 
 
-    
+    </div>
 
 
 

@@ -18,6 +18,11 @@ def AddAttendance(request):
 def Attendance(request):
     return render(request, 'Administration/Attendance.html')
 
+def AttendanceReport(request):
+    return render(request, 'Administration/AttendanceReport.html')
+
+
+
 
 def Student(request):
 
@@ -34,6 +39,14 @@ def Assignment(request):
 
 def Fees(request):
     return render(request, 'Administration/Fees.html')
+
+def Fees(request):
+    return render(request, 'Administration/Fees.html')
+
+def FeeDues(request):
+    return render(request, 'Administration/FeeDues.html')
+
+
 
 
 def Exams(request):
@@ -66,7 +79,8 @@ def Teachers(request):
 
 
 def ViewAllStudents(request):
-    return render(request, 'Administration/ViewAllStudents.html')
+    allstudents=AdminUser.objects.filter(is_student=True)
+    return render(request, 'Administration/ViewAllStudents.html',{'students':allstudents})
 
 def ViewAllTeachers(request):
     return render(request, 'Administration/ViewAllTeachers.html')
@@ -81,10 +95,12 @@ def Teacherssalary(request):
     return render(request, 'Administration/Teacherssalary.html')
 
 def AddStudents(request):
-    return render(request, 'Administration/AddStudents.html')
+    allstudents=AdminUser.objects.filter(is_student=True)
+    return render(request, 'Administration/AddStudents.html',{'students':allstudents})
 
 def ApproveStudents(request):
-    return render(request, 'Administration/ApproveStudents.html')
+    allstudents=AdminUser.objects.filter(is_student=True)
+    return render(request, 'Administration/ApproveStudents.html',{'students':allstudents})
 
 def FeeofStudents(request):
     return render(request, 'Administration/FeeofStudents.html')

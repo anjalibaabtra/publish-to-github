@@ -6,6 +6,7 @@ urlpatterns = [
     path('index', views.home, name='index'),
     path('AddAttendance', views.AddAttendance, name='AddAttendance'),
     path('Attendance', views.Attendance, name='Attendance'),
+    path('AttendanceReport', views.AttendanceReport, name='AttendanceReport'),
     path('Assignments', views.Assignment, name='Assign'),
     path('Notice', views.Notice, name='Notice'),
     path('Fees', views.Fees, name='Fees'),
@@ -26,8 +27,8 @@ urlpatterns = [
     path('AddStudents', views.AddStudents, name='AddStudents'),
     path('ApproveStudents', views.ApproveStudents, name='ApproveStudents'),
     path('FeeofStudents', views.FeeofStudents, name='FeeofStudents'),
-    path('ViewAttendance', views.ViewAttendance, name='ViewAttendance'),
-    
+    path('FeeDues', views.FeeDues, name='FeeDues'),
+    path('ViewAttendance', views.ViewAttendance, name='ViewAttendance'),    
     path('logout', views.Adminlogout, name='logout'),
 
 

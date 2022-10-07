@@ -453,3 +453,127 @@ tr:nth-child(even) {
     text-decoration: none;
 
 }
+.outerdiv{
+    border: solid 1px grey;
+    margin-left: 300px;
+    margin-top: 20px;    
+    height:auto;
+    width: 60%; 
+    /* padding-bottom: 20px; */
+    
+    /* padding-top: 0px; */
+}
+
+.innerdiv{
+    margin-top: 0px;    
+    height: 5%;
+    width: 100%;
+    /* align-items: center; */
+    text-align: center;
+    color: white;
+    background-color: rgb(80, 91, 80);    
+    /* padding-left: 10%; */
+}
+.font{
+    color:white;
+    /* margin-left: 300px; */
+    padding-top: 10px;
+    /* align-content: center; */
+    
+    
+}
+.text{
+    width: 35%;
+    height: 50%;
+    margin-top: 40px;
+    margin-left: 80px;
+    padding: 10px;
+    border: radius 6px;    
+    
+}
+.button{
+    margin-left: 20%;
+    margin-top: 40px;
+    width: 12%;
+    padding: 8px;
+    border-radius: 10px;
+    background-color: rgb(24, 149, 24);
+    color: white;
+    border: none;
+}
+.selection{
+    width: 15%;
+    height: 50%;
+    margin-top: 40px;
+    margin-left: 80px;
+    padding: 8px;
+    border: radius 6px;    
+    
+    
+}
+.div_in{
+    border: 1px;
+    height: 10px;
+    width: 95%;
+}
+
+.heading{
+    padding-top: 0%;
+    height: 10%;
+    width: 100%;
+    align-items: center;    
+    background-color: rgb(77, 99, 209);
+    color: white;
+    font-size: larger;
+}
+.inside_div{
+    margin-top: 60px;
+    border:solid 1px gray;
+    height: 40px;
+    width: 80%;
+    margin-left: 80px;
+    
+}
+.stdetail{
+    margin-left: 90px;
+}
+.innertbl{
+    height: 150px;
+    width: 80%;
+    margin-left: 80px;   
+    
+}
+.tbltr{
+    background-color: #245271;
+    color: white;
+}
+.grade{
+    border: solid 1px grey;
+    margin-top: 30px;
+    height: 20%;
+    width: 100%;
+    background-color: rgb(210, 234, 244);
+    
+}
+.in_div{
+    border: solid 1px gray;
+    height: 35%;
+    width: 80%;    
+    margin-left: 50px;
+    background-color: white;
+    padding-top: 0px
+    ;
+    
+}
+.prgph{
+    margin-left: 60px;
+    
+}
+.time_tbl{
+    border: solid 1px blue;
+    height: 600px;
+    width: 80%;
+    margin-left: 80%;
+    margin-top: 50px;
+    color: white;
+}

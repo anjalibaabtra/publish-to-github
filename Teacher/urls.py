@@ -5,7 +5,9 @@ app_name='Teacher'
 urlpatterns=[
     path('index',views.home, name='index'),     
     path('Profile',views.Profile,name='Profile'),
-    path('AttendanceReport',views.Attendance, name='AttendanceReport'),
+    path('Attendance',views.Attendance, name='Attendance'),
+    path('AttendanceReport',views.AttendanceReport, name='AttendanceReport'),
+    path('ViewAttendance',views.ViewAttendance, name='ViewAttendance'),
     path('HomeWork',views.HomeWork , name='HomeWork'),
     path('ProgressCard',views.ProgressCard, name='ProgressCard'),
     path('Assignments',views.Assignment, name='Assignment' ),
@@ -16,6 +18,10 @@ urlpatterns=[
     path('StudentsRegister',views.StudentsRegister, name='StudentsRegister'),
     path('StudentsMarks',views.StudentsMarks, name='StudentsMarks'),
     path('TimeTable',views.TimeTable, name='TimeTable'),
+    path('AddAttendance',views.AddAttendance, name='AddAttendance'),
+    path('ViewAttendance',views.ViewAttendance, name='ViewAttendance'),
+    path('Fees',views.Fees, name='Fees'),
+    path('FeeDues',views.FeeDues, name='FeeDues'),
     path('logout', views.Teacherlogout, name='logout'),
 
 ]

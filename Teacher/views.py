@@ -15,11 +15,24 @@ def Profile(request):
 def Attendance(request):
     return render(request, 'Teacher/Attendance.html')
 
+def AttendanceReport(request):
+    return render(request, 'Teacher/AttendanceReport.html')
+
+def ViewAttendance(request):
+    return render(request, 'Teacher/ViewAttendance.html')
+
+def Fees(request):
+    return render(request, 'Teacher/Fees.html')
+
+def FeeDues(request):
+    return render(request, 'Teacher/FeeDues.html')
+
+
 def HomeWork(request):
     return render(request, 'Teacher/HomeWork.html')
 
 def ProgressCard(request):
-    return render(request, 'Teacher/ProgresssCard.html')
+    return render(request, 'Teacher/ProgressCard.html')
 
 def Assignment(request):
     return render(request, 'Teacher/Assignment.html')
@@ -35,6 +48,13 @@ def Notice(request):
 
 def TeacherDashboard(request):
     return render(request, 'Teacher/TeacherDashboard.html')
+
+def AddAttendance(request):
+    return render(request, 'Teacher/AddAttendance.html')
+
+def ViewAttendance(request):
+    return render(request, 'Teacher/ViewAttendance.html')
+
 
 # def signup(request):
 #     if request.method=='POST':

@@ -7,7 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/Adminstyles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/AddTeachersstyles.css' %}">
     <link rel="stylesheet" href="{% static 'css/Styles.css' %}">
+
     <title>Document</title>
 </head>
 
@@ -28,23 +30,39 @@
             <a href="Teachers">Teacher</a>
             <a href="Students">Student</a>
             <a href="Attendance">Attendance</a>
-            <a href="Fees">Fee</a>
-            <a class="active" href="Notice">Notice</a>
+            <a class="active" href="Fees">Fee</a>
+            <a href="Notice">Notice</a>
     
         </div>
 
-        <div class="outerdiv">
-            <div class="div2">
-                <h3>Announce Something</h3>
-            </div>
-            <!-- <div class="div3"> -->
-                <!-- <p>Write Your Message Here</p> -->
-                <!-- <input type="text" class="div3"> -->
-            <!-- </div> -->
-            <textarea name="" id="" cols="150" rows="5" style="margin-left: 10%; margin-top: 3%;" placeholder="Write your Message Here"></textarea><br><br>
-            <button class="sub_btn"  ><a class="a_inbox" href="">Submit</a></button>
+        <div class="table_div">
+            <table class="outertable">
+
+                <thead>
+                    <tr>
+                        <th colspan="5" style="background-color:rgb(97, 118, 249);" class="th1"> Fee of Class</th>
+                    </tr>
+                    <tr class="tr2">
+                        <th class=" table">Student Name</th>
+                        <th class=" table">Roll No</th>
+                        <th class="table">Contact</th>
+                        <th class="table">Dues</th>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                </thead>
+                
+
+
+
+            </table>
         </div>
-        
+
 </body>
 
 </html>

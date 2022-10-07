@@ -17,6 +17,14 @@ def Profile(request):
 def AttendanceReport(request):
     return render(request, 'Student/AttendanceReport.html')
 
+def ViewAttendance(request):
+    return render(request, 'Student/ViewAttendance.html')
+
+
+def Attendance(request):
+    return render(request, 'Student/Attendance.html')
+
+
 
 def HomeWork(request):
     return render(request, 'Student/HomeWork.html')

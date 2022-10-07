@@ -1,12 +1,129 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/Studentstyles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Styles.css' %}">
+
     <title>Document</title>
 </head>
-<body>
-    Progress Card for Students
+
+<body class="dashbody">
+    <div class="navbar">
+
+        {% if user.is_authenticated %}
+        <h3 class="h3 line">Hello, {{user.username}}</h3>
+        <button class="line navbtn"><a class="a_inbox" href="logout">Logout</a></button>
+        {% else %}
+        <button class="line navbtn"><a class="a_inbox" href="TeacherLogin">Login</a></button>
+        {% endif %}
+
+    </div>
+    <div class="outer">
+        <div class="sidebar">
+            <p style="color: white; margin-left: 20px;"></p>
+            <img src="{% static 'images/teacher.png'%}" class="dashboardimg">
+            <a href="TeacherDashboard">Dashboard</a>
+            <a href="Profile">Profile</a>
+            <a href="Attendance">View Attendance</a>
+            <a class="active" href="ProgressCard">ProgressCard</a>
+            <a href="HomeWork">Home Work</a>
+            <a href="TimeTable">TimeTable</a>
+            <a href="Fees">Fees</a>
+            <a href="Notice">Notice</a>
+
+        </div>
+
+
+        <div class="outerdiv">
+            <table class="heading">
+
+                <tr>
+                    <th>REPORT CARD</th>
+                </tr>
+
+            </table>
+
+            <div class="stdetail">
+                <label for="">Student Name :</label><br>
+                <label for="">Student Id :</label><br>
+                <label for="">Class :</label>
+
+            </div>
+
+            <table aria-colspan="5" class="innertbl">
+                <tr class="tbltr">
+                    <th>Subject</th>
+                    <th>1st Quarter</th>
+                    <th>2nd Quarter</th>
+                    <th>3rd Quarter</th>
+                    <th>4th Quarter</th>
+                </tr>
+                <tr>
+                    <td>English</td>
+                </tr>
+                <tr>
+                    <td>Economics</td>
+                </tr>
+                <tr>
+                    <td>History</td>
+                </tr>
+
+                <tr>
+                    <td>Biology</td>
+                </tr>
+
+                <tr>
+                    <td>Math</td>
+                </tr>
+                <tr>
+                    <td>Science</td>
+                </tr>
+                <tr>
+                    <td>Social Studies</td>
+                </tr>
+                <tr>
+                    <td>Art</td>
+                </tr>
+                <tr>
+                    <td>Physical Education</td>
+                </tr>
+                <tr>
+                    <td>Chemistry</td>
+                </tr>                
+
+            </table>
+            <div class="grade">
+                
+                <p class="prgph">GRADING SCALE: </p>
+                <p class="prgph">
+                    A+ - 96-100  &emsp;&emsp;&emsp; B+ - 86-90 &emsp;&emsp;&emsp; C - 76-80 <br>
+                    A -  91-95 &emsp;&emsp;&emsp;&emsp;   B - 81-85 &emsp;&emsp;&emsp;&emsp;  D -75 below
+
+
+
+                </p>
+                    
+                
+                <!-- <div class="in_div">
+                    <p>Comment: </p>
+
+                </div> -->
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+
+
 </body>
+
 </html>

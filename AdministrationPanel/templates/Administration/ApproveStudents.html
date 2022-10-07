@@ -44,20 +44,22 @@
                     </tr>
                     <tr class="tr2">
                         <th class=" table">Name</th>
-                        <th class="table">Class</th>                        
+                        <th class=" table">Class</th>
+                        <th class="table">Contact</th>
                         <th class="table">Fee</th>
-                        <th class=" table">Contact Number</th>
                         <th class="table">Actions</th>
                     </tr>
 
-                <!-- </thead>
+                </thead>
+                {% for student in students %}
                 <tr>
-                    <td></td>
+                    <td>{{student.username}}</td>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td><a class="plus" href="AddAttendance"></a></td>
-                </tr> -->
+                </tr>
+                {% endfor %}
 
 
 
