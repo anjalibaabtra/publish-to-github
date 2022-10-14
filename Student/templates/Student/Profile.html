@@ -55,27 +55,27 @@
                 
                 <div class="form1">
                     <img src="{% static 'images/student.jpg'%}" class="dashboardimg"><br>
-                    <label for="">Name : </label>
+                    <label for="">Name : </label>&ensp;
                     <label for="">{{user.username}}</label><br><br>
-                    <label for="">Student Id:</label>
-                    <label for="">323942<label><br><br>
-                    <label for="">Class:</label>
-                    <label for="">4</label><br><br>
-                    <label for="">Division:</label>
-                    <label for="">h</label>
+                    <label for="">Student Id:</label>&ensp;
+                    <label for="">{{user.AdmissionNum}}<label><br><br>
+                    <label for="">Class:</label>&ensp;
+                    <label for="">{{user.Std}}</label><br><br>
+                    <label for="">Division:</label>&ensp;
+                    <label for="">{{user.Division}}</label>
                 </div>
                 
                 <div class="form2">
-                    <label for="">Roll No:</label>
-                    <label for=""></label><br><br>
-                    <label for="">Academic Year:</label>
-                    <label for=""></label><br><br>
-                    <label for="">Gender:</label>
-                    <label for=""></label><br><br>
-                    <label for="">Religion:</label>
-                    <label for=""></label><br><br>
-                    <label for="">Blood:</label>
-                    <label for=""></label>
+                    <label for="">Roll No:</label>&ensp;
+                    <label for="">{{user.RollNumber}}</label><br><br>
+                    <label for="">Academic Year:</label>&ensp;
+                    <label for="">2022</label><br><br>
+                    <label for="">Gender:</label>&ensp;
+                    <label for="">{{user.Gender}}</label><br><br>
+                    <label for="">Religion:</label>&ensp;
+                    <label for="">{{user.Religion}}</label><br><br>
+                    <label for="">Blood:</label>&ensp;
+                    <label for="">{{user.Blood}}</label>
                 </div>
                 
             </div>

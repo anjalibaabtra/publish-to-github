@@ -13,7 +13,7 @@
     <title>Document</title>
 </head>
 
-<body  class="dashbody">
+<body class="dashbody">
     <div class="navbar">
 
 
@@ -24,15 +24,15 @@
     </div>
     <div class="outer">
         <div class="sidebar">
-            <p style="color: white; margin-left: 20px;">Hello,  {{user.username}}</p>
-            <img src="{% static 'images/admindash.jpg'%}" class="dashboardimg">
+            <p style="color: white; margin-left: 20px;">Hello, {{user.username}}</p>
+            <img src="{% static 'images/admin.jpg'%}" class="dashboardimg">
             <a href="dashboard">Dashboard</a>
             <a href="Teachers">Teacher</a>
-            <a class="active"href="Students">Student</a>
+            <a class="active" href="Students">Student</a>
             <a href="Attendance">Attendance</a>
             <a href="Fees">Fee</a>
             <a href="Notice">Notice</a>
-    
+
         </div>
 
         <div class="table_div">
@@ -54,10 +54,11 @@
                 {% for student in students %}
                 <tr>
                     <td>{{student.username}}</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><a class="plus" href="AddAttendance"></a></td>
+                    <td>{{student.Std}}</td>
+                    <td>{{student.Contact}}</td>
+                    <td>{{student.id}}</td>
+                    <!-- <td><a href="{% url 'Approve' student.id %}">Approve</a></td> -->
+
                 </tr>
                 {% endfor %}
 

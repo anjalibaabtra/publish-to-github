@@ -81,13 +81,17 @@ def StudentLogin(request):
         is_student='true'    
         # obj = AdminUser.objects.first()
         user = authenticate(request, username=uname, password=password)
+        
         # getuser = AdminUser.objects.get(id=user.)
 
         # print(check)
         if user is not None and user.is_student:
         # if user.is_student == True:
             print(user,uname,password)
-            login(request, user)
+            # if Studentdetails.objects.filter(Name=user.username).exists():
+            #     user_name = Studentdetails.objects.get(Name = user.username)
+            login(request, user)    
+
             # return redirect("dashboard")
             return render(request, 'Student/StudentDashboard.html')
         else:

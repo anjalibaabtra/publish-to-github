@@ -56,28 +56,31 @@
                 
                 <div class="form1">
                     <img src="{% static 'images/teacher.png'%}" class="dashboardimg"><br>
-                    <label for="">Name : </label>
+                    <label for="">Name : </label>&ensp;
                     <label for="">{{user.username}}</label><br><br>
-                    <label for="">Teacher Id:</label>
-                    <label for="">323942<label><br><br>
-                    <label for="">Class:</label>
-                    <label for="">4</label><br><br>
-                    <label for="">Division:</label>
-                    <label for="">h</label>
+                    <label for="">Teacher Id:</label>&ensp;
+                    <label for="">{{user.AdmissionNum}}<label><br><br>
+                    <label for="">Class:</label>&ensp;
+                    <label for="">{{user.Std}}</label><br><br>
+                    <label for="">Division:</label>&ensp;
+                    <label for="">{{user.Division}}</label>
                 </div>
                 
                 <div class="form2">
-                    <label for="">Subject:</label>
-                    <label for=""></label><br><br>
-                    <label for="">Joining Date:</label>
-                    <label for=""></label><br><br>
-                    <label for="">Gender:</label>
-                    <label for=""></label><br><br>
-                    <label for="">Religion:</label>
-                    <label for=""></label><br><br>
-                    <label for="">Blood:</label><br><br>
-                    <label for="">Work Experience:</label><br><br>
-                    <label for="">Salary:</label>
+                    <label for="">Subject:</label>&ensp;
+                    <label for="">{{user.Subject}}</label><br><br>
+                    <label for="">Joining Date:</label>&ensp;
+                    <label for="">{{user.JoinDate}}</label><br><br>
+                    <label for="">Gender:</label>&ensp;
+                    <label for="">{{user.Gender}}</label><br><br>
+                    <label for="">Religion:</label>&ensp;
+                    <label for="">{{user.Religion}}</label><br><br>
+                    <label for="">Blood:</label>&ensp;
+                    <label for="">{{user.Blood}}</label><br><br>
+                    <label for="">Work Experience:</label>&ensp;
+                    <label for="">{{user.WorkExperience}}</label><br><br>
+                    <label for="">Salary:</label>&ensp;
+                    <label for="">{{user.Salary}}</label><br><br>
                 </div>
                 
             </div>

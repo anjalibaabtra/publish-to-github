@@ -335,7 +335,7 @@ tr:nth-child(even) {
     padding-top: 10px;
     height: 15%;
     width: 100%;
-    background-color: grey;
+    background-color: rgb(111, 109, 109);
     color: white;
     text-align: center;
     align-items: center;
@@ -344,7 +344,7 @@ tr:nth-child(even) {
 }
 
 .outerdiv {
-    border: solid 1px grey;
+    border: solid 1px rgb(61, 59, 59);
     margin-left: 210px;
     margin-top: 10px;
     margin-right: 5px;
@@ -367,7 +367,7 @@ tr:nth-child(even) {
     font-weight: 500;
     /* font-size: medium; */
     /* color: white; */
-    /* border: none; */
+    border: none;
     border-radius: 20px;
     text-align: center;
     margin-top: 25px;

@@ -7,55 +7,121 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/Adminstyles.css' %}">
-    <link rel="stylesheet" href="{% static 'css/AddTeachersstyles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Studentstyles.css' %}">
     <link rel="stylesheet" href="{% static 'css/Styles.css' %}">
 
-    
+
     <title>Document</title>
 </head>
 
-<body  class="dashbody">
-    <div class="navbar">
+<body class="dashbody">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="navbar">
 
 
-        <h3 class="h3 line">ADMIN PANEL</h3>
+            <h3 class="h3 line">ADMIN PANEL</h3>
 
-        <button class="line navbtn"><a class="a_inbox" href="logout">Logout</a></button>
-
-    </div>
-    <div class="outer">
-        <div class="sidebar">
-            <p style="color: white; margin-left: 20px;">Hello,  {{user.username}}</p>
-            <img src="{% static 'images/admindash.jpg'%}" class="dashboardimg">
-            <a href="dashboard">Dashboard</a>
-            <a  class="active"href="Teachers">Teacher</a>
-            <a href="Students">Student</a>
-            <a href="Attendance">Attendance</a>
-            <a href="Fees">Fee</a>
-            <a href="Notice">Notice</a>
-    
-        </div>
-
-    <div class="outerdiv">
-        <div class="innerdiv">
-            <h3 class="font">Hire New Teacher To School</h3>
-        </div>
-        <div>
-            <input type="text" placeholder="First Name" class="text">
-            <input type="text" placeholder="Last Name" class="text">
-            <input type="text" placeholder="Username" class="text">
-            <input type="text" placeholder="Password" class="text">
-            <input type="text" placeholder="Contact" class="text">
-            <input type="text" placeholder="Salary" class="text"><br><br>
-
-            <button class="button">Hire</button>
+            <button class="line navbtn"><a class="a_inbox" href="logout">Logout</a></button>
 
         </div>
-    </div>
+        <div class="outer">
+            <div class="sidebar">
+                <p style="color: white; margin-left: 20px;">Hello, {{user.username}}</p>
+                <img src="{% static 'images/admin.jpg'%}" class="dashboardimg">
+                <a href="dashboard">Dashboard</a>
+                <a class="active" href="Teachers">Teacher</a>
+                <a href="Students">Student</a>
+                <a href="Attendance">Attendance</a>
+                <a href="Fees">Fee</a>
+                <a href="Notice">Notice</a>
 
-    
+            </div>
 
-        
+            <div class="outerdiv">
+                <div class="innerdiv">
+                    <h3 class="font">Hire New Teacher To School</h3>
+                </div>
+                <div>
+                    <select name="name" id="" style="width: 37%;" class="selection">
+                        <option value=" " selected disabled hidden>Select Teacher</option>
+                        {% for teacher in teachers %}
+                        <option value="{{teacher.username}}">{{teacher.username}}</option>
+                        {% endfor %}
+                    </select>
+
+                    <input type="text" placeholder="First Name" class="text" name="fname">
+                    <input type="text" placeholder="Teacher Id" class="text" name="admnum">
+                    <input type="text" placeholder="Last Name" class="text" name="lname">
+
+
+                    <select name="std" id="" class="selection">
+                        <option value=" " selected disabled hidden>Select a class</option>
+
+                        <option value="1">1st std</option>
+                        <option value="2">2nd std</option>
+                        <option value="3">3rd std</option>
+                        <option value="4">4th std</option>
+                        <option value="5">5th std</option>
+                        <option value="6">6th std</option>
+                        <option value="7">7th std</option>
+                        <option value="8">8th std</option>
+                        <option value="9">9th std</option>
+                        <option value="10">10th std</option>
+                    </select>
+
+                    <input type="text" placeholder="Division" name="division" style="margin-left: 25px; width: 5%;"
+                        class="selection">
+
+
+                    <select name="subject" id="" style="margin-left: 26px; width: 10%;" class="selection">
+                        <option value=" " selected disabled hidden>Subject</option>
+                        <option value="English">English</option>
+                        <option value="Malayalam">Malayalam</option>
+                        <option value="Sanskrit">Sanskrit</option>
+                        <option value="EVS">EVS</option>
+                        <option value="Science">Science</option>
+                        <option value="Maths">Maths</option>
+                        <option value="English">English</option>
+                        <option value="Hindi">Hindi</option>
+                        <option value="ICT">ICT</option>
+                        <option value="PT">PT</option>
+                        <option value="Drawing">Drawing</option>
+                        <option value="Music">Music</option>
+                    </select>
+
+                    <select name="gender" id="" style="margin-left: 78px; width: 10%;" class="selection">
+                        <option value=" " selected disabled hidden>Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+
+
+                    <input type="text" placeholder="Religion" name="religion" style="margin-left: 24px; width: 7%;"
+                        class="selection">
+                    <input type="text" placeholder="Date of Birth" name="dob" style="margin-left: 2.5%; width: 10%;"
+                        class="selection"><br>
+                    
+                    <input type="text" placeholder="Join Date" name="joindate" style="width: 15%;" class="text">
+                    <input type="text" placeholder="Work Experience" style="width: 10%;" name="workexp" class="text">
+                    <input type="text" placeholder="Blood Group" name="bld" style="margin-left: 70px; width: 7%;"
+                        class="selection">
+                    <input type="text" placeholder="Salary" name="salary" style="margin-left:2.4%; width: 7%;"
+                        class="text">
+                    <input type="text" placeholder="Contact" name="contact" style="margin-left:2.4%; width: 10%;"
+                        class="text"><br>
+
+
+
+
+                    <button class="button">Hire</button>
+
+                </div>
+            </div>
+
+
+
+    </form>
 </body>
 
 </html>

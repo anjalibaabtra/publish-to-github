@@ -45,7 +45,7 @@
                         <th colspan="5" style="background-color:rgb(97, 118, 249);" class="th1"> Teachers</th>
                     </tr>
                     <tr class="tr2">
-                        <th class=" table">Name</th>
+                        <th class="table">Name</th>
                         <th class="table">Contact</th>                        
                         <th class="table">Salary</th>
                         <th class=" table">Joining Date</th>
@@ -53,13 +53,15 @@
                     </tr>
 
                 </thead>
+                {% for teacher in teachers %}
                 <tr>
+                    <td>{{teacher.username}}</td>
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
-                    <td><a class="plus" href="AddAttendance"></a></td>
+                    <td><a class="plus" href=""></a></td>
                 </tr>
+                {% endfor %}
 
 
 

@@ -18,10 +18,9 @@ def AddAttendance(request):
 def Attendance(request):
     return render(request, 'Administration/Attendance.html')
 
+
 def AttendanceReport(request):
     return render(request, 'Administration/AttendanceReport.html')
-
-
 
 
 def Student(request):
@@ -40,13 +39,13 @@ def Assignment(request):
 def Fees(request):
     return render(request, 'Administration/Fees.html')
 
+
 def Fees(request):
     return render(request, 'Administration/Fees.html')
 
+
 def FeeDues(request):
     return render(request, 'Administration/FeeDues.html')
-
-
 
 
 def Exams(request):
@@ -79,42 +78,104 @@ def Teachers(request):
 
 
 def ViewAllStudents(request):
-    allstudents=AdminUser.objects.filter(is_student=True)
-    return render(request, 'Administration/ViewAllStudents.html',{'students':allstudents})
+    
+    allstudents = AdminUser.objects.filter(is_student=True)
+    return render(request, 'Administration/ViewAllStudents.html', {'students': allstudents})
+
 
 def ViewAllTeachers(request):
-    return render(request, 'Administration/ViewAllTeachers.html')
+    allteachers = AdminUser.objects.filter(is_teacher=True)
+    return render(request, 'Administration/ViewAllTeachers.html', {'teachers': allteachers})
+
 
 def AddTeachers(request):
-    return render(request, 'Administration/AddTeachers.html')
+    if request.method == "POST":
+        
+        Name = request.POST["name"]
+        Fname = request.POST["fname"]
+        Lname = request.POST["lname"]
+        Dob = request.POST["dob"]
+        Gender = request.POST["gender"]
+        AdmissionNum = request.POST["admnum"]
+        Std = request.POST["std"]
+        Division = request.POST["division"]
+        Religion = request.POST["religion"]
+        Bld = request.POST["bld"]        
+        Contact = request.POST["contact"]
+        Subject = request.POST["subject"]
+        Joindate = request.POST["joindate"]
+        WorkExperience = request.POST["workexp"]
+        Salary = request.POST["salary"]
 
-def ApproveTeachers(request):
+        user = AdminUser.objects.get(username=Name)
+        AdminUser.objects.filter(id=user.id).update(
+            Name=Name, Firstname=Fname, Lastname=Lname, AdmissionNum=AdmissionNum, DOB=Dob, Gender=Gender,
+            Std=Std, Division=Division, Religion=Religion, Blood=Bld, Contact=Contact,
+            Subject=Subject,JoinDate=Joindate,WorkExperience=WorkExperience,Salary=Salary)
+    allteachers = AdminUser.objects.filter(is_teacher=True)
+    return render(request, 'Administration/AddTeachers.html', {'teachers': allteachers})
+
+
+def ApproveTeachers(request):    
     return render(request, 'Administration/ApproveTeachers.html')
+
 
 def Teacherssalary(request):
     return render(request, 'Administration/Teacherssalary.html')
 
+
 def AddStudents(request):
-    allstudents=AdminUser.objects.filter(is_student=True)
-    return render(request, 'Administration/AddStudents.html',{'students':allstudents})
+    if request.method == "POST":
+        
+        Name = request.POST["name"]
+        Fname = request.POST["fname"]
+        Lname = request.POST["lname"]
+        Dob = request.POST["dob"]
+        Gender = request.POST["gender"]
+        AdmissionNum = request.POST["admnum"]
+        Std = request.POST["std"]
+        Division = request.POST["division"]
+        Religion = request.POST["religion"]
+        Bld = request.POST["bld"]
+        Rollnum = request.POST["roll"]
+        Contact = request.POST["contact"]
+
+        user = AdminUser.objects.get(username=Name)
+        AdminUser.objects.filter(id=user.id).update(
+            Name=Name, Firstname=Fname, Lastname=Lname, AdmissionNum=AdmissionNum, DOB=Dob, Gender=Gender,
+            Std=Std, Division=Division, Religion=Religion, Blood=Bld, RollNumber=Rollnum, Contact=Contact)
+        print(Name)
+        print(Dob)
+        print(Gender)
+        print(AdmissionNum)
+        print(Std)
+        print(Division)
+        print(Contact)
+        print(Rollnum)
+        # student_data.save()
+    allstudents = AdminUser.objects.filter(is_student=True)
+    return render(request, 'Administration/AddStudents.html', {'students': allstudents})
+
 
 def ApproveStudents(request):
-    allstudents=AdminUser.objects.filter(is_student=True)
-    return render(request, 'Administration/ApproveStudents.html',{'students':allstudents})
+    allstudents = AdminUser.objects.filter(is_student=True)
+    return render(request, 'Administration/ApproveStudents.html', {'students': allstudents})
+
+def ApproveStd(request, StudentId):
+    AdminUser.objects.filter(id=StudentId).update(is_approved=True)
+    print(id.is_approved)
+    print("Approved")
+    allstudents = AdminUser.objects.filter(is_student=True)
+    return render(request, 'Administration/ApproveStudents.html', {'students': allstudents})
+
+
 
 def FeeofStudents(request):
     return render(request, 'Administration/FeeofStudents.html')
 
+
 def ViewAttendance(request):
     return render(request, 'Administration/ViewAttendance.html')
-
-
-
-
-
-
-
-
 
 
 def signup(request):
@@ -161,6 +222,7 @@ def AdminLogin(request):
         return render(request, 'Administration/AdminLogin.html')
 
     # return render(request, 'Administration/AdminLogin.html')
+
 
 def Adminlogout(request):
     logout(request)

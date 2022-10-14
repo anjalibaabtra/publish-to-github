@@ -15,81 +15,85 @@
 </head>
 
 <body class="dashbody">
-    <div class="navbar">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="navbar">
 
 
-        <h3 class="h3 line">ADMIN PANEL</h3>
+            <h3 class="h3 line">ADMIN PANEL</h3>
 
-        <button class="line navbtn"><a class="a_inbox" href="logout">Logout</a></button>
-
-    </div>
-    <div class="outer">
-        <div class="sidebar">
-            <p style="color: white; margin-left: 20px;">Hello, {{user.username}}</p>
-            <img src="{% static 'images/admindash.jpg'%}" class="dashboardimg">
-            <a href="dashboard">Dashboard</a>
-            <a href="Teachers">Teacher</a>
-            <a class="active" href="Students">Student</a>
-            <a href="Attendance">Attendance</a>
-            <a href="Fees">Fee</a>
-            <a href="Notice">Notice</a>
+            <button class="line navbtn"><a class="a_inbox" href="logout">Logout</a></button>
 
         </div>
+        <div class="outer">
+            <div class="sidebar">
+                <p style="color: white; margin-left: 20px;">Hello, {{user.username}}</p>
+                <img src="{% static 'images/admin.jpg'%}" class="dashboardimg">
+                <a href="dashboard">Dashboard</a>
+                <a href="Teachers">Teacher</a>
+                <a class="active" href="Students">Student</a>
+                <a href="Attendance">Attendance</a>
+                <a href="Fees">Fee</a>
+                <a href="Notice">Notice</a>
 
-        <div class="outerdiv">
-            <div class="innerdiv">
-                <h3 class="font">New Admission</h3>
             </div>
-            <div>
-                <select name="" id="" style="width: 37%;" class="selection">
-                    <option value=" " selected disabled hidden>Select Student</option>
-                    {% for student in students %}
-                    <option value="">{{student.username}}</option>
-                    {% endfor %}
-                </select>
 
-                <input type="text" placeholder="First Name" class="text">
-                <input type="text" placeholder="Admission Number" class="text">
-                <input type="text" placeholder="Last Name" class="text">
+            <div class="outerdiv">
+                <div class="innerdiv">
+                    <h3 class="font">New Admission</h3>
+                </div>
+                <div>
+                    <select name="name" id="" style="width: 37%;" class="selection">
+                        <option value=" " selected disabled hidden>Select Student</option>
+                        {% for student in students %}
+                        <option value="{{student.username}}">{{student.username}}</option>
+                        {% endfor %}
+                    </select>
 
-
-                <select name="" id="" class="selection">
-                    <option value=" " selected disabled hidden>Select a class</option>
-
-                    <option value="">1st std</option>
-                    <option value="">2nd std</option>
-                    <option value="">3rd std</option>
-                    <option value="">4th std</option>
-                    <option value="">5th std</option>
-                    <option value="">6th std</option>
-                    <option value="">7th std</option>
-                    <option value="">8th std</option>
-                    <option value="">9th std</option>
-                    <option value="">10th std</option>
-                </select>
-
-                <input type="text" placeholder="Division" style="margin-left: 10px; width: 5%;" class="selection">
-
-                <select name="" id="" style="margin-left: 37px; width: 10%;" class="selection">
-                    <option value=" " selected disabled hidden>Gender</option>
-                    <option value="">Male</option>
-                    <option value="">Female</option>
-                </select>
-                <input type="text" placeholder="Religion" style=" width: 13%;" class="selection">
-                <input type="text" placeholder="Blood Group" style="margin-left: 7%; width: 13%;" class="selection">
-                <input type="text" placeholder="Roll Number" class="text">
-                <input type="text" placeholder="Contact" class="text"><br>
+                    <input type="text" placeholder="First Name" class="text" name="fname">
+                    <input type="text" placeholder="Admission Number" class="text" name="admnum">
+                    <input type="text" placeholder="Last Name" class="text" name="lname">
 
 
+                    <select name="std" id="" class="selection">
+                        <option value=" " selected disabled hidden>Select a class</option>
 
-                <button class="button">Submit</button>
+                        <option value="1">1st std</option>
+                        <option value="2">2nd std</option>
+                        <option value="3">3rd std</option>
+                        <option value="4">4th std</option>
+                        <option value="5">5th std</option>
+                        <option value="6">6th std</option>
+                        <option value="7">7th std</option>
+                        <option value="8">8th std</option>
+                        <option value="9">9th std</option>
+                        <option value="10">10th std</option>
+                    </select>
 
+                    <input type="text" placeholder="Division" name="division" style="margin-left: 10px; width: 5%;"
+                        class="selection">
+
+                    <select name="gender" id="" style="margin-left: 37px; width: 10%;" class="selection">
+                        <option value=" " selected disabled hidden>Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                    <input type="text" placeholder="Religion" name="religion" style=" width: 10%;" class="selection">
+                    <input type="text" placeholder="Date of Birth" name="dob" style="margin-left: 2.5%; width: 10%;"
+                        class="selection">
+                    <input type="text" placeholder="Blood Group" name="bld" style="margin-left: 2%; width: 6%;"
+                        class="selection">
+                    <input type="text" placeholder="Roll Number" name="roll" class="text">
+                    <input type="text" placeholder="Contact" name="contact" class="text"><br>
+
+
+
+                    <button class="button">Submit</button>
+
+                </div>
             </div>
         </div>
-
-
-
-
+    </form>
 </body>
 
 </html>
