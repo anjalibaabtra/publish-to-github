@@ -2,6 +2,7 @@
 from dataclasses import dataclass
 # from datetime import date, datetime
 from email.policy import default
+from statistics import mode
 from unittest.util import _MAX_LENGTH
 import django
 from django.db import models
@@ -9,6 +10,13 @@ from django.contrib.auth.models import AbstractUser
 # from django.contrib.auth
 
 # Create your models here.
+
+class StudentFee(models.Model):
+    Email = models.TextField(max_length=100,default='')
+    TotalFee = models.IntegerField(default=0)
+    PendingFee = models.IntegerField(default=0)
+    PaidFee = models.IntegerField(default=0)
+    # adminuser = models.ForeignKey(AdminUser,blank=True,null=True, on_delete = models.CASCADE)
 
 class AdminUser(AbstractUser):
     Name = models.TextField(max_length=100,default='')
@@ -30,27 +38,12 @@ class AdminUser(AbstractUser):
     is_admin = models.BooleanField(default=False)
     is_student = models.BooleanField(default=False)
     is_teacher = models.BooleanField(default=False)
-
     is_approved = models.BooleanField(default=False)
-
-
-# class Studentdetails(models.Model):
-#     # adminuser = models.ForeignKey(AdminUser, on_delete=models.CASCADE)
-#     Name = models.TextField(max_length=100)
-#     Firstname = models.TextField(max_length=100)
-#     Lastname = models.TextField(max_length=100)
-#     Std = models.IntegerField()
-#     Contact = models.BigIntegerField()
-#     AdmissionNum = models.IntegerField()
-#     Division = models.TextField(max_length=50)
-#     RollNumber = models.IntegerField()
-#     DOB = models.DateField()
-#     Gender = models.TextField(max_length=50)
-#     Religion = models.TextField(max_length=50)
-#     Blood = models.TextField(max_length=50)
+    studentfee = models.ForeignKey(StudentFee,blank=True,null=True, on_delete = models.CASCADE)
 
 # class StudentFee(models.Model):
-#     TotalFee = models.IntegerField(max_length=50)
-#     PendingFee = models.IntegerField(max_length=50)
-#     PaidFee = models.IntegerField(max_length=50)
-#     adminuser = models.ForeignKey(AdminUser, on_delete = models.CASCADE)
+#     Email = models.TextField(max_length=100,default='')
+#     TotalFee = models.IntegerField(default=0)
+#     PendingFee = models.IntegerField(default=0)
+#     PaidFee = models.IntegerField(default=0)
+#     adminuser = models.ForeignKey(AdminUser,blank=True,null=True, on_delete = models.CASCADE)

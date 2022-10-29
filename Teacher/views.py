@@ -5,24 +5,30 @@ from administrationpanel.models import AdminUser
 
 # Create your views here.
 
+
 def home(request):
     return render(request, 'Administration/index.html')
 
+
 def Profile(request):
     return render(request, 'Teacher/Profile.html')
-    
+
 
 def Attendance(request):
     return render(request, 'Teacher/Attendance.html')
 
+
 def AttendanceReport(request):
     return render(request, 'Teacher/AttendanceReport.html')
+
 
 def ViewAttendance(request):
     return render(request, 'Teacher/ViewAttendance.html')
 
+
 def Fees(request):
     return render(request, 'Teacher/Fees.html')
+
 
 def FeeDues(request):
     return render(request, 'Teacher/FeeDues.html')
@@ -31,11 +37,14 @@ def FeeDues(request):
 def HomeWork(request):
     return render(request, 'Teacher/HomeWork.html')
 
+
 def ProgressCard(request):
     return render(request, 'Teacher/ProgressCard.html')
 
+
 def Assignment(request):
     return render(request, 'Teacher/Assignment.html')
+
 
 def Notice(request):
     return render(request, 'Teacher/Notice.html')
@@ -46,14 +55,43 @@ def Notice(request):
 # def signup(request):
 #     return render(request, 'Teacher/signup.html')
 
+
 def TeacherDashboard(request):
     return render(request, 'Teacher/TeacherDashboard.html')
+
 
 def AddAttendance(request):
     return render(request, 'Teacher/AddAttendance.html')
 
+
 def ViewAttendance(request):
     return render(request, 'Teacher/ViewAttendance.html')
+
+
+def ChangePassword(request):
+    if request.method == "POST":
+        Email = request.POST["email"]
+        password = request.POST["pswd"]
+        RptPassword = request.POST["rptpswd"]
+        user = AdminUser.objects.get(email=Email) 
+        if AdminUser.objects.filter(email=Email).exists() and user.is_teacher:            
+            if password == RptPassword:                  
+                # AdminUser.objects.filter(id=user.id).update(password=password)
+                if password == RptPassword:                  
+                    u = AdminUser.objects.get(username=user.username)
+                    # print(user.password)
+                    u.set_password(password)
+                    u.save()
+                messages.info(request, 'Password has been changed')
+                return render(request, 'Teacher/TeacherLogin.html')
+            else:
+                messages.info(request, 'Password does not match')
+        else:
+            messages.info(request, 'Email Does not Exist')
+
+    return render(request, 'Teacher/ChangePassword.html')
+
+
 
 
 # def signup(request):

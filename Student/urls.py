@@ -17,5 +17,6 @@ urlpatterns=[
     path('signup',views.signup, name='signup'),
     path('StudentDashboard',views.StudentDashboard, name='StudentDashboard'),
     path('logout', views.Studentlogout, name='logout'),
+    path('ChangePassword', views.ChangePassword, name='ChangePassword'),
     
 ]

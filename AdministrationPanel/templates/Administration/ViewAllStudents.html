@@ -24,7 +24,7 @@
     <div class="outer">
         <div class="sidebar">
             <p style="color: white; margin-left: 20px;">Hello, {{user.username}}</p>
-            <img src="{% static 'images/admindash.jpg'%}" class="dashboardimg">
+            <img src="{% static 'images/admin.jpg'%}" class="dashboardimg">
 
             <a href="dashboard">Dashboard</a>
             <a href="Teachers">Teacher</a>
@@ -55,8 +55,8 @@
                 {% for student in students %}
                 <tr>
                     <td>{{student.username}}</td>
-                    <td></td>
-                    <td></td>
+                    <td>{{student.Std}}</td>
+                    <td>{{student.Contact}}</td>
                     <td></td>
                     <td><a class="plus" href=""></a></td>
                 </tr>

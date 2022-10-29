@@ -122,7 +122,7 @@
       email = document.getElementById('form3Example3cg').value
       rptpassword = document.getElementById('form3Example4cdg').value
 
-      if (username == null || username == "") {
+      if (username == "") {
         document.getElementById('error').innerHTML = "Please Enter Username"
       } else if (email == "") {
         document.getElementById('error').innerHTML = "Please Enter Email"
@@ -134,6 +134,12 @@
         document.getElementById('error').innerHTML = " "
         // window.location.replace("AdminLogin")
       }
+      document.getElementById('error').innerHTML=" "
+      document.getElementById('form3Example1cg').value=" "
+      document.getElementById('form3Example3cg').value=" "
+      document.getElementById('form3Eample4cg').value=" "      
+      document.getElementById('form3Example4cdg').value=" "
+
     }
 
   </script>

@@ -5,6 +5,7 @@ app_name='Teacher'
 urlpatterns=[
     path('index',views.home, name='index'),     
     path('Profile',views.Profile,name='Profile'),
+    path('ChangePassword',views.ChangePassword,name='ChangePassword'),
     path('Attendance',views.Attendance, name='Attendance'),
     path('AttendanceReport',views.AttendanceReport, name='AttendanceReport'),
     path('ViewAttendance',views.ViewAttendance, name='ViewAttendance'),

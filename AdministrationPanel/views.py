@@ -1,21 +1,26 @@
 
+import email
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from administrationpanel.models import AdminUser
+from administrationpanel.models import AdminUser, StudentFee
 from django.contrib.auth import authenticate, login, logout
-
+from django.db.models import Subquery, OuterRef
 
 # Create your views here.
 
+
 def home(request):
+
     return render(request, 'Administration/index.html')
 
 
 def AddAttendance(request):
+
     return render(request, 'Administration/AddAttendance.html')
 
 
 def Attendance(request):
+
     return render(request, 'Administration/Attendance.html')
 
 
@@ -40,12 +45,37 @@ def Fees(request):
     return render(request, 'Administration/Fees.html')
 
 
-def Fees(request):
-    return render(request, 'Administration/Fees.html')
+# def Fees(request):
+#     return render(request, 'Administration/Fees.html')
+
+
+
+
+# Employee.objects.annotate(
+#     company_name=Subquery(
+#         Company.objects.filter(location=OuterRef('location')).values('name')
+#     )).values_list('name', 'company_name')
+
+# field_name = 'name'
+# obj = MyModel.objects.first()
+# field_value = getattr(obj, field_name)
+
+# field_object = MyModel._meta.get_field(field_name)
+
 
 
 def FeeDues(request):
-    return render(request, 'Administration/FeeDues.html')
+    allstudents = AdminUser.objects.filter(is_student=True)
+    email_id='email'
+    # email_id= AdminUser._meta.get_field(email)
+    # print(email_id)
+    obj = AdminUser.objects.first()
+    # student=AdminUser.objects.get(email=mail_id)
+    # student_email=Subquery(StudentFee.objects.filter(Email=OuterRef()))
+    student_email =getattr(obj,email_id)
+    print(student_email)
+    allfees = StudentFee.objects.filter(Email=student_email)
+    return render(request, 'Administration/FeeDues.html',{'students': allstudents,'fees':allfees})
 
 
 def Exams(request):
@@ -53,6 +83,23 @@ def Exams(request):
 
 
 def ChangePassword(request):
+    if request.method == "POST":
+        Email = request.POST["email"]
+        password = request.POST["pswd"]
+        RptPassword = request.POST["rptpswd"]
+        user = AdminUser.objects.get(email=Email) 
+        if AdminUser.objects.filter(email=Email).exists() and user.is_admin:            
+            if password == RptPassword:                  
+                u = AdminUser.objects.get(username=user.username)
+                # print(user.password)
+                u.set_password(password)
+                u.save()
+                messages.info(request, 'Password has been changed')
+                return render(request, 'Administration/AdminLogin.html')
+            else:
+                messages.info(request, 'Password does not match')
+        else:
+            messages.info(request, 'Email Does not Exist')
     return render(request, 'Administration/ChangePassword.html')
 
 
@@ -78,7 +125,6 @@ def Teachers(request):
 
 
 def ViewAllStudents(request):
-    
     allstudents = AdminUser.objects.filter(is_student=True)
     return render(request, 'Administration/ViewAllStudents.html', {'students': allstudents})
 
@@ -89,8 +135,9 @@ def ViewAllTeachers(request):
 
 
 def AddTeachers(request):
+
     if request.method == "POST":
-        
+
         Name = request.POST["name"]
         Fname = request.POST["fname"]
         Lname = request.POST["lname"]
@@ -100,7 +147,7 @@ def AddTeachers(request):
         Std = request.POST["std"]
         Division = request.POST["division"]
         Religion = request.POST["religion"]
-        Bld = request.POST["bld"]        
+        Bld = request.POST["bld"]
         Contact = request.POST["contact"]
         Subject = request.POST["subject"]
         Joindate = request.POST["joindate"]
@@ -111,12 +158,13 @@ def AddTeachers(request):
         AdminUser.objects.filter(id=user.id).update(
             Name=Name, Firstname=Fname, Lastname=Lname, AdmissionNum=AdmissionNum, DOB=Dob, Gender=Gender,
             Std=Std, Division=Division, Religion=Religion, Blood=Bld, Contact=Contact,
-            Subject=Subject,JoinDate=Joindate,WorkExperience=WorkExperience,Salary=Salary)
+            Subject=Subject, JoinDate=Joindate, WorkExperience=WorkExperience, Salary=Salary)
+
     allteachers = AdminUser.objects.filter(is_teacher=True)
     return render(request, 'Administration/AddTeachers.html', {'teachers': allteachers})
 
 
-def ApproveTeachers(request):    
+def ApproveTeachers(request):
     return render(request, 'Administration/ApproveTeachers.html')
 
 
@@ -126,7 +174,7 @@ def Teacherssalary(request):
 
 def AddStudents(request):
     if request.method == "POST":
-        
+
         Name = request.POST["name"]
         Fname = request.POST["fname"]
         Lname = request.POST["lname"]
@@ -161,13 +209,13 @@ def ApproveStudents(request):
     allstudents = AdminUser.objects.filter(is_student=True)
     return render(request, 'Administration/ApproveStudents.html', {'students': allstudents})
 
+
 def ApproveStd(request, StudentId):
     AdminUser.objects.filter(id=StudentId).update(is_approved=True)
     print(id.is_approved)
     print("Approved")
     allstudents = AdminUser.objects.filter(is_student=True)
     return render(request, 'Administration/ApproveStudents.html', {'students': allstudents})
-
 
 
 def FeeofStudents(request):
@@ -183,13 +231,13 @@ def signup(request):
         uname = request.POST["uname"]
         email = request.POST["email"]
         password = request.POST["password"]
-        if AdminUser.objects.filter(Username=uname).exists():
+        if AdminUser.objects.filter(username=uname).exists():
             messages.info(request, 'Username already used')
             # return redirect('signup')
 
             return render(request, 'Administration/signup.html')
 
-        elif AdminUser.objects.filter(Email=email).exists():
+        elif AdminUser.objects.filter(email=email).exists():
             messages.info(request, 'Email already used')
             # return redirect('signup')
             return render(request, 'Administration/signup.html')

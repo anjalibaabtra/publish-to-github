@@ -1,4 +1,5 @@
 from django.urls import path
+# from django.contrib.auth import views as auth_views
 from . import views
 app_name = 'Administration'
 
@@ -33,6 +34,6 @@ urlpatterns = [
     path('ViewAttendance', views.ViewAttendance, name='ViewAttendance'),    
     path('logout', views.Adminlogout, name='logout'),
 
-
+    # path('change-password',auth_views.PasswordChangeView(template_name='change-password'))
 
 ]

@@ -19,4 +19,27 @@
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1))
 }
+.outerdiv{
+  margin-top: 10%;
+  border: solid 1px;
+  border-radius: 15px;
+  height: 300px;
+  width: 300px;
+  text-align: center;
+  margin-left:40% ;
+  padding-top: 40px;
+  /* background-color: rgb(86, 121, 137); */
+  background: linear-gradient(to right, rgb(42, 70, 94), rgba(143, 211, 244, 1));
+  
+}
+.txt{
+  border-radius: 8px;
+  height: 25px;
+}
+.btn{
+  border-radius: 8px;
+  height: 35px;
+  width: 30%;
+
+}
 

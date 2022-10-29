@@ -40,20 +40,34 @@
 
                 <thead>
                     <tr>
-                        <th colspan="5" style="background-color:rgb(97, 118, 249);" class="th1"> Fee of Class</th>
+                        <th colspan="6" style="background-color:rgb(97, 118, 249);" class="th1"> Fee of Class</th>
                     </tr>
                     <tr class="tr2">
                         <th class=" table">Student Name</th>
                         <th class=" table">Roll No</th>
                         <th class="table">Contact</th>
-                        <th class="table">Dues</th>                        
+                        <th class="table">Total Fees</th>
+                        <th class="table">Paid Fees</th>
+                        <th class="table">Fees Due</th>                        
                     </tr>
+                    {% for student in students %}
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td name="email">{{student.email}}</td>
+                        <td>{{student.Std}}</td>
+                        <td>{{student.Contact}}</td>
+                    {% endfor %}
+                    {% for fee in fees %}
+                        <td>{{student.fee.TotalFee}}</td>
+                        <td>{{student.fee.PaidFee}}</td>
+                        <td>{{student.fee.PendingFee}}</td>
                     </tr>
+                    {% endfor %}
+                    <!-- <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        
+                    </tr> -->
 
                 </thead>
                 
