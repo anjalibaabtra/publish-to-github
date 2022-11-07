@@ -40,7 +40,7 @@
 
                 <thead>
                     <tr>
-                        <th colspan="5" style="background-color:rgb(97, 118, 249);" class="th1"> Teachers</th>
+                        <th colspan="5" style="background-color:rgb(97, 118, 249);" class="th1">Approve Teachers</th>
                     </tr>
                     <tr class="tr2">
                         <th class=" table">Name</th>
@@ -50,15 +50,16 @@
                         <th class="table">Actions</th>
                     </tr>
 
-                <!-- </thead>
+               </thead>
+               {% for teacher in teachers %}
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><a class="plus" href="AddAttendance"></a></td>
-                </tr> -->
-
+                    <td>{{teacher.username}}</td>
+                    <td>{{teacher.Contact}}</td>
+                    <td>{{teacher.Salary}}</td>
+                    <td>{{teacher.JoinDate}}</td>
+                    <td><a class="plus" href=""></a></td>
+                </tr>
+                {% endfor %}
 
 
 

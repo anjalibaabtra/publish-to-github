@@ -12,11 +12,16 @@ from django.contrib.auth.models import AbstractUser
 # Create your models here.
 
 class StudentFee(models.Model):
+    Name = models.TextField(max_length=100,default='')
     Email = models.TextField(max_length=100,default='')
+    AdmissionNum = models.IntegerField(default=0)
+    Contact = models.BigIntegerField(default=000)
+    Std = models.IntegerField(default=0)
+    Division = models.TextField(max_length=50, default='')
     TotalFee = models.IntegerField(default=0)
     PendingFee = models.IntegerField(default=0)
     PaidFee = models.IntegerField(default=0)
-    # adminuser = models.ForeignKey(AdminUser,blank=True,null=True, on_delete = models.CASCADE)
+   
 
 class AdminUser(AbstractUser):
     Name = models.TextField(max_length=100,default='')
@@ -39,11 +44,9 @@ class AdminUser(AbstractUser):
     is_student = models.BooleanField(default=False)
     is_teacher = models.BooleanField(default=False)
     is_approved = models.BooleanField(default=False)
-    studentfee = models.ForeignKey(StudentFee,blank=True,null=True, on_delete = models.CASCADE)
 
-# class StudentFee(models.Model):
-#     Email = models.TextField(max_length=100,default='')
-#     TotalFee = models.IntegerField(default=0)
-#     PendingFee = models.IntegerField(default=0)
-#     PaidFee = models.IntegerField(default=0)
-#     adminuser = models.ForeignKey(AdminUser,blank=True,null=True, on_delete = models.CASCADE)
+class TeachersSalary(models.Model):
+    Name = models.TextField(max_length=100,default='')
+    Salary = models.BigIntegerField(default=0)
+
+  

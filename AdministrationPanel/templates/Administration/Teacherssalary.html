@@ -25,7 +25,7 @@
     <div class="outer">
         <div class="sidebar">
             <p style="color: white; margin-left: 20px;">Hello,  {{user.username}}</p>
-            <img src="{% static 'images/admindash.jpg'%}" class="dashboardimg">
+            <img src="{% static 'images/admin.jpg'%}" class="dashboardimg">
             <a href="dashboard">Dashboard</a>
             <a class="active" href="Teachers">Teacher</a>
             <a href="Students">Student</a>
@@ -44,8 +44,14 @@
                     <tr class="tr2">
                         <th class=" table">Teachers Name</th>
                         <th class="table">Salary</th>                      
-                        
                     </tr>
+                    {% for salary in salaries %}
+                    <tr>
+                        <td>{{salary.Name}}</td>
+                        <td>{{salary.Salary}}</td>
+                    </tr>
+                    {% endfor %}
+
 
                 </thead>             
 

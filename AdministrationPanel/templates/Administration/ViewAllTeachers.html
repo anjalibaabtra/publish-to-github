@@ -49,17 +49,16 @@
                         <th class="table">Contact</th>                        
                         <th class="table">Salary</th>
                         <th class=" table">Joining Date</th>
-                        <th class="table">Actions</th>
                     </tr>
 
                 </thead>
                 {% for teacher in teachers %}
-                <tr>
+                <tr align="center">
                     <td>{{teacher.username}}</td>
                     <td>{{teacher.Contact}}</td>
                     <td>{{teacher.Salary}}</td>
                     <td>{{teacher.JoinDate}}</td>
-                    <td><a class="plus" href=""></a></td>
+                    
                 </tr>
                 {% endfor %}
 

@@ -14,6 +14,9 @@
     <form action="AdminLogin" method="POST">
         {% csrf_token %}
         <div class="row" align="center">
+            <button type="button" class="Hbtn" onclick="rtnhome()">Home</button>
+
+
             <div class="column left divborder">
                 <img src="{% static 'images/admin.png' %}" />
                 <h1>Admin Login Panel</h1>
@@ -23,7 +26,7 @@
             <div class="column right ">
                 <label for="" class="lbl">Username</label>
                 <input type="text" name="uname" class="inputtxt" id="usertxt"><br><br>
-                
+
 
                 <label for="" class="lbl">Password</label>
                 <input type="password" name="password" class="inputtxt" id="passwrd"><br><br>
@@ -33,13 +36,13 @@
                 {% endfor %}
                 <br>
                 <b style="color: red;" id="error"></b><br><br>
-                    <!-- <button class="btn btn1">Sign Up</button>
+                <!-- <button class="btn btn1">Sign Up</button>
                 <button class="btn btn2" onclick="loginCheck()">Login</button> -->
-                    <a class="a-btn btn1" href="{% url 'Administration:signup' %}" onclick="signup()">SignUp</a>
-                    <!-- <a type="submit" class="a-btn btn2" onclick="">Login</a> -->
-                    
-                    <button type="submit" class="a-btn btn2" onclick="">Login</button><br><br>
-                    <a href="ChangePassword">Forgotten Password</a>
+                <a class="a-btn btn1" href="{% url 'Administration:signup' %}" onclick="signup()">SignUp</a>
+                <!-- <a type="submit" class="a-btn btn2" onclick="">Login</a> -->
+
+                <button type="submit" class="a-btn btn2" onclick="">Login</button><br><br>
+                <a href="ChangePassword">Forgotten Password</a>
                 </btn>
 
             </div>
@@ -91,20 +94,22 @@
                 }
 
 
-                
+
             } else {
 
             }
             console.log(status)
 
-
-
-
-
         }
+
+        function rtnhome() {
+            console.log('home')
+            window.location.replace("index");
+        }
+
     </script>
 
-
+    
 
 </body>
 

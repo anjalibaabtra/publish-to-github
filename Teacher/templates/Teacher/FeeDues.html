@@ -48,20 +48,35 @@
 
             <thead>
                 <tr>
-                    <th colspan="5" style="background-color:rgb(97, 118, 249);" class="th1"> Fee of Class</th>
+                    <th colspan="5" style="background-color:rgb(97, 118, 249);" class="th1"> Fee of Class  {{std}}</th>
                 </tr>
                 <tr class="tr2">
                     <th class=" table">Student Name</th>
-                    <th class=" table">Roll No</th>
+                    <th class=" table">Admission No</th>
                     <th class="table">Contact</th>
-                    <th class="table">Dues</th>                        
+                    <th class="table">Paid Fees</th>
+                    <th class="table">Fees Due</th>
                 </tr>
-                <tr>
+                {% for student in students %}
+                        <tr>
+                            <td>{{student.Name}}</td>
+                            <td>{{student.AdmissionNum}}</td>
+                            <td>{{student.Contact}}</td>
+                            <!-- <td>{{student.TotalFee}}</td> -->
+                            <td>{{student.PaidFee}}</td>
+                            <td>{{student.PendingFee}}</td>
+                            <!-- <td> -->
+                                <!-- <input style="width: 40px;" type="text" name="paid" placeholder="0" id=""> -->
+                                <!-- <a  href="UpdateFees?value={{student.id}}" class="plus"></a>
+                            </td> -->
+                        </tr>
+                        {% endfor %}
+                <!-- <tr>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
-                </tr>
+                </tr> -->
 
             </thead>
             

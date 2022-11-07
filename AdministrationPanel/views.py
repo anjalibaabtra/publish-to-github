@@ -2,7 +2,7 @@
 import email
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from administrationpanel.models import AdminUser, StudentFee
+from administrationpanel.models import AdminUser, StudentFee, TeachersSalary
 from django.contrib.auth import authenticate, login, logout
 from django.db.models import Subquery, OuterRef
 
@@ -45,39 +45,28 @@ def Fees(request):
     return render(request, 'Administration/Fees.html')
 
 
-# def Fees(request):
-#     return render(request, 'Administration/Fees.html')
-
-
-
-
-# Employee.objects.annotate(
-#     company_name=Subquery(
-#         Company.objects.filter(location=OuterRef('location')).values('name')
-#     )).values_list('name', 'company_name')
-
-# field_name = 'name'
-# obj = MyModel.objects.first()
-# field_value = getattr(obj, field_name)
-
-# field_object = MyModel._meta.get_field(field_name)
-
+def FeeofStudents(request):
+    return render(request, 'Administration/FeeofStudents.html')
 
 
 def FeeDues(request):
-    allstudents = AdminUser.objects.filter(is_student=True)
-    email_id='email'
-    # email_id= AdminUser._meta.get_field(email)
-    # print(email_id)
-    obj = AdminUser.objects.first()
-    # student=AdminUser.objects.get(email=mail_id)
-    # student_email=Subquery(StudentFee.objects.filter(Email=OuterRef()))
-    student_email =getattr(obj,email_id)
-    print(student_email)
-    allfees = StudentFee.objects.filter(Email=student_email)
-    return render(request, 'Administration/FeeDues.html',{'students': allstudents,'fees':allfees})
+    value = request.GET['value']
+    students=StudentFee.objects.filter(Std=value)
+    return render(request, 'Administration/FeeDues.html',{'students':students,'std':value})
 
+def UpdateFees(request):
+    id=request.GET['value']
+    if request.method == "POST":
+        Name = request.POST["name"]
+        PaidFee = request.POST["paid"]
+        student = StudentFee.objects.get(Name=Name)
+        StudentFee.objects.filter(id=student.id).update(PaidFee=student.PaidFee+int(PaidFee),PendingFee=student.PendingFee-int(PaidFee))
+        return render(request, 'Administration/FeeofStudents.html')
+    else:
+        students = StudentFee.objects.filter(id=id)
+        return render(request, 'Administration/updateFees.html',{'students':students})
 
+        
 def Exams(request):
     return render(request, 'Administration/Exams.html')
 
@@ -87,9 +76,9 @@ def ChangePassword(request):
         Email = request.POST["email"]
         password = request.POST["pswd"]
         RptPassword = request.POST["rptpswd"]
-        user = AdminUser.objects.get(email=Email) 
-        if AdminUser.objects.filter(email=Email).exists() and user.is_admin:            
-            if password == RptPassword:                  
+        user = AdminUser.objects.get(email=Email)
+        if AdminUser.objects.filter(email=Email).exists() and user.is_admin:
+            if password == RptPassword:
                 u = AdminUser.objects.get(username=user.username)
                 # print(user.password)
                 u.set_password(password)
@@ -125,7 +114,7 @@ def Teachers(request):
 
 
 def ViewAllStudents(request):
-    allstudents = AdminUser.objects.filter(is_student=True)
+    allstudents = StudentFee.objects.all()
     return render(request, 'Administration/ViewAllStudents.html', {'students': allstudents})
 
 
@@ -135,9 +124,7 @@ def ViewAllTeachers(request):
 
 
 def AddTeachers(request):
-
     if request.method == "POST":
-
         Name = request.POST["name"]
         Fname = request.POST["fname"]
         Lname = request.POST["lname"]
@@ -159,23 +146,26 @@ def AddTeachers(request):
             Name=Name, Firstname=Fname, Lastname=Lname, AdmissionNum=AdmissionNum, DOB=Dob, Gender=Gender,
             Std=Std, Division=Division, Religion=Religion, Blood=Bld, Contact=Contact,
             Subject=Subject, JoinDate=Joindate, WorkExperience=WorkExperience, Salary=Salary)
-
+        teacher_salary=TeachersSalary.objects.create(Name=Fname, Salary=Salary)
+        teacher_salary.save()
     allteachers = AdminUser.objects.filter(is_teacher=True)
     return render(request, 'Administration/AddTeachers.html', {'teachers': allteachers})
 
 
 def ApproveTeachers(request):
-    return render(request, 'Administration/ApproveTeachers.html')
+    allteachers = AdminUser.objects.filter(is_teacher=True)
+    return render(request, 'Administration/ApproveTeachers.html', {'teachers': allteachers})
 
 
 def Teacherssalary(request):
-    return render(request, 'Administration/Teacherssalary.html')
+    salary = TeachersSalary.objects.all()
+    # print(salary.Name)
+    return render(request, 'Administration/Teacherssalary.html', {'salaries': salary})
 
 
 def AddStudents(request):
     if request.method == "POST":
-
-        Name = request.POST["name"]
+        uname = request.POST["uname"]
         Fname = request.POST["fname"]
         Lname = request.POST["lname"]
         Dob = request.POST["dob"]
@@ -188,20 +178,15 @@ def AddStudents(request):
         Rollnum = request.POST["roll"]
         Contact = request.POST["contact"]
 
-        user = AdminUser.objects.get(username=Name)
+        user = AdminUser.objects.get(username=uname)
         AdminUser.objects.filter(id=user.id).update(
-            Name=Name, Firstname=Fname, Lastname=Lname, AdmissionNum=AdmissionNum, DOB=Dob, Gender=Gender,
+            Name=uname, Firstname=Fname, Lastname=Lname, AdmissionNum=AdmissionNum, DOB=Dob, Gender=Gender,
             Std=Std, Division=Division, Religion=Religion, Blood=Bld, RollNumber=Rollnum, Contact=Contact)
-        print(Name)
-        print(Dob)
-        print(Gender)
-        print(AdmissionNum)
-        print(Std)
-        print(Division)
-        print(Contact)
-        print(Rollnum)
-        # student_data.save()
+        user_fee = StudentFee.objects.get(Email=user.email)
+        StudentFee.objects.filter(id=user_fee.id).update(
+            AdmissionNum=AdmissionNum, Contact=Contact, Division=Division, Name=Fname, Std=Std)
     allstudents = AdminUser.objects.filter(is_student=True)
+    # studentfees = StudentFee.objects.all()
     return render(request, 'Administration/AddStudents.html', {'students': allstudents})
 
 
@@ -218,9 +203,6 @@ def ApproveStd(request, StudentId):
     return render(request, 'Administration/ApproveStudents.html', {'students': allstudents})
 
 
-def FeeofStudents(request):
-    return render(request, 'Administration/FeeofStudents.html')
-
 
 def ViewAttendance(request):
     return render(request, 'Administration/ViewAttendance.html')
@@ -234,9 +216,7 @@ def signup(request):
         if AdminUser.objects.filter(username=uname).exists():
             messages.info(request, 'Username already used')
             # return redirect('signup')
-
             return render(request, 'Administration/signup.html')
-
         elif AdminUser.objects.filter(email=email).exists():
             messages.info(request, 'Email already used')
             # return redirect('signup')

@@ -64,7 +64,11 @@ def Assignment(request):
 
 
 def Fees(request):
-    return render(request, 'Student/Fees.html')
+    user = request.session.get('user_name')
+    print(user)
+    user=StudentFee.objects.get(Name=user)
+    student = StudentFee.objects.filter(id=user.id)
+    return render(request, 'Student/Fees.html',{'students':student})
 
 
 def Notice(request):
@@ -72,7 +76,13 @@ def Notice(request):
 
 
 def StudentDashboard(request):
-    return render(request, 'Student/StudentDashboard.html')
+    user = request.session.get('user_name')
+    print(user)
+    student = StudentFee.objects.get(Name=user)
+    # studentID=StudentFee.objects.filter(id=student.id)
+    fees = student.PaidFee
+    print(fees)
+    return render(request, 'Student/StudentDashboard.html', {'fee':fees})
 
 
 def signup(request):
@@ -82,8 +92,6 @@ def signup(request):
         password = request.POST["password"]
         if AdminUser.objects.filter(username=uname).exists():
             messages.info(request, 'Username already used')
-            # return redirect('signup')
-
             return render(request, 'Student/signup.html')
 
         elif AdminUser.objects.filter(email=email).exists():
@@ -94,7 +102,7 @@ def signup(request):
             user_data = AdminUser.objects.create_user(
                 username=uname, email=email, password=password, is_student=True)
             user_data.save()
-            fee_data = StudentFee.objects.create(Email=email, TotalFee=8000,PendingFee=8000)            
+            fee_data = StudentFee.objects.create(Email=email, TotalFee=8000, PendingFee=8000)            
             fee_data.save()
             # return redirect('AdminLogin')
             return render(request, 'Student/StudentLogin.html')
@@ -115,15 +123,17 @@ def StudentLogin(request):
         # print(check)
         if user is not None and user.is_student:
             # if user.is_student == True:
-            print(user, uname, password)
+            # print(user, uname, password)
             # if Studentdetails.objects.filter(Name=user.username).exists():
             #     user_name = Studentdetails.objects.get(Name = user.username)
             login(request, user)
-
+            user_name=user.Name
+            request.session['user_name'] = user_name
+            # print(user_name)
             # return redirect("dashboard")
             return render(request, 'Student/StudentDashboard.html')
         else:
-            print(user, uname, password)
+            # print(user, uname, password)
             messages.info(request, 'Invalid Username or Password')
             # return redirect('AdminLogin')
             return render(request, 'Student/StudentLogin.html')

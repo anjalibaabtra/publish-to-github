@@ -20,8 +20,8 @@
 </style>
 
 <body class="dashbody">
-    <!-- <form action="" method="POST">
-        {% csrf_token %} -->
+    <form action="" method="POST">
+        {% csrf_token %}
         <div class="navbar">
 
 
@@ -48,7 +48,9 @@
 
                     <thead>
                         <tr>
-                            <th colspan="7" style="background-color:rgb(97, 118, 249);" class="th1"> Fee of Class  {{std}}</th>
+                            <th colspan="7" style="background-color:rgb(97, 118, 249);" class="th1"> Fee Payment
+                                {{student.Name}}
+                            </th>
                         </tr>
                         <tr class="tr2">
                             <th class=" table">Student Name</th>
@@ -62,15 +64,15 @@
 
                         {% for student in students %}
                         <tr id="tr">
-                            <td>{{student.Name}}</td>
+                            <td>{{student.Name}}<input type="hidden" value="{{student.Name}}" name="name"></td>
                             <td>{{student.AdmissionNum}}</td>
                             <td>{{student.Contact}}</td>
                             <td>{{student.TotalFee}}</td>
                             <td>{{student.PaidFee}}</td>
                             <td>{{student.PendingFee}}</td>
                             <td>
-                                <!-- <input style="width: 40px;" type="text" name="paid" placeholder="0" id=""> -->
-                                <a  href="UpdateFees?value={{student.id}}" class="plus"></a>
+                                <input style="width: 40px;" type="text" name="paid" placeholder="0" id="">
+                                <button type="submit" class="plus"></button>
                             </td>
                         </tr>
                         {% endfor %}
@@ -83,42 +85,9 @@
             </div>
 
         </div>
-    <!-- </form> -->
-    <script type="text/javascript">
-        // function clicked() {
-
-        //     var length = document.getElementById("table").rows.length;
-        //     // var check_box = document.getElementById("chkbox")[0];
-        //     var txt_box = document.getElementById("paidfee")[0];
-        //     // var rowIndex = check_box.parentNode.parentNode.rowIndex;
-
-        //     // if (check_box.checked == true) {
-        //     //     txt_box.disabled = false;
-        //     // } else {
-        //     //     txt_box.disabled = true;
-        //     // }
-
-        //     var x = document.getElementsByName("check");
-        //     var txt = "";
-        //     var i;
-        //     console.log(x.length);
-
-        //     for (i = 0; i < x.length; i++) {
-        //         // txt = txt + "The index of Row " + (i + 1) + " is: " + x[i].rowIndex + "<br>";
-
-        //         if (x[i].checked == true) {
-        //             // txt_box.disabled = false;
-        //             console.log(x[i])
-        //             // console.log(txt_box[i].disabled=false);
-        //         } else {
-        //             // txt_box.disabled = true;
-        //         }
-        //     }
-
-        //     // console.log(x.length);
-
-        // }
-    </script>
+    </form>
+    
+  
 
 </body>
 

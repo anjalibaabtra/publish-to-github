@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
-from administrationpanel.models import AdminUser
+from administrationpanel.models import AdminUser, StudentFee
 
 # Create your views here.
 
@@ -31,7 +31,9 @@ def Fees(request):
 
 
 def FeeDues(request):
-    return render(request, 'Teacher/FeeDues.html')
+    value = request.GET['value']
+    students=StudentFee.objects.filter(Std=value)
+    return render(request, 'Teacher/FeeDues.html',{'students':students,'std':value})
 
 
 def HomeWork(request):
@@ -48,12 +50,6 @@ def Assignment(request):
 
 def Notice(request):
     return render(request, 'Teacher/Notice.html')
-
-# def TeacherLogin(request):
-#     return render(request, 'Teacher/TeacherLogin.html')
-
-# def signup(request):
-#     return render(request, 'Teacher/signup.html')
 
 
 def TeacherDashboard(request):
@@ -91,29 +87,6 @@ def ChangePassword(request):
 
     return render(request, 'Teacher/ChangePassword.html')
 
-
-
-
-# def signup(request):
-#     if request.method=='POST':
-#         uname=request.POST["uname"]
-#         email=request.POST["email"]
-#         password=request.POST["password"]
-#         if TeacherUser.objects.filter(Username=uname).exists():
-#             messages.info(request,'Username already used')
-#             # return redirect('signup'
-#             return render(request,'Teacher/signup.html')
-#         elif TeacherUser.objects.filter(Email=email).exists():
-#             messages.info(request,'Email already used')
-#             # return redirect('signup')
-#             return render(request,'Teacher/signup.html')
-#         else:
-#             user_data=TeacherUser(Username=uname, Email=email, Password=password)
-#             user_data.save()
-#             # return redirect('AdminLogin')
-#             return render(request,'Teacher/TeacherLogin.html')
-#     else:
-#         return render(request,'Teacher/signup.html')
 
 
 def signup(request):

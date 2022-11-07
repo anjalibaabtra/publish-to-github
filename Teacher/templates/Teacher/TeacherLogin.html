@@ -14,6 +14,8 @@
     <form action="TeacherLogin" method="POST">
         {% csrf_token %}
         <div class="row" align="center">
+            <button type="button" class="Hbtn" onclick="rtnhome()">Home</button>
+
             <div class="column left divborder">
                 <img src="{% static 'images/teacher.png' %}" width="200px" height="200px" />
                 <h1>Teacher Login Panel</h1>
@@ -93,10 +95,13 @@
             }
             console.log(status)
 
-
-
-
         }
+        function rtnhome() {
+            console.log('home')
+            window.location.replace("../Administration/index");
+        }
+
+
     </script>
 
 
